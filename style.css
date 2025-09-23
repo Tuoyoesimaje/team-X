@@ -375,7 +375,7 @@ nav{
   flex-direction: column;
   border: rgba(196, 196, 196, 0.2) 1px solid;
   border-radius: 15px;
-  padding: 10px 15px;
+  padding: 10px 0px;
   gap: 10px;
 }
 
@@ -388,6 +388,16 @@ nav{
   display: flex;
   gap: 10px;
   cursor: pointer;
+  padding: 10px 15px;
+
+}
+
+.wh1:hover{
+  background: rgba(77, 76, 76, 0.2);
+}
+
+.header-w{
+  padding: 0px 15px;
 }
 
 .wh1-details{
@@ -399,6 +409,7 @@ nav{
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  padding: 0px 15px;
 }
 
 .trends:hover{
@@ -416,6 +427,12 @@ nav{
   font-size: 13px;
 }
 
+.show{
+  padding: 0px 15px;
+  color: #1D9BF0;
+  cursor: pointer;
+  font-size: 13px;
+}
 
 .trend-details{
   font-size: 13px;
@@ -433,7 +450,7 @@ nav{
   flex-direction: column;
   border: rgba(196, 196, 196, 0.2) 1px solid;
   border-radius: 15px;
-  padding: 10px 15px;
+  padding: 10px 0px;
   gap: 10px;
 }
 
@@ -453,6 +470,7 @@ nav{
   display: flex;
   align-items: center;
   gap: 10px;
+  padding: 10px 15px;
 } 
 
 .wtf-main:hover{
