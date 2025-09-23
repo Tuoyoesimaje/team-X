@@ -505,10 +505,31 @@ nav{
   align-self: end;
 }
 
-/*@media (max-width: 1000px){
+.mobile-icons{
+  width: 26px;
+  padding: 8px;
+}
+.mobile-nav{
+    display: none
+  }
+
+
+@media (max-width: 1000px){
   .left-view{
     display: none;
   }
-}*/
-
+}
+@media (max-width: 480px){
+  .mobile-nav{
+    display: flex;
+    position: sticky;
+    bottom: 0;
+    border-top: rgb(196, 196, 196, 0.2) 1px solid;
+    background-color: black;
+    padding: 4px 0;
+  }
+  .post-area{
+    display: none;
+  }
+}
 
