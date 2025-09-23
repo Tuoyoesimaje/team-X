@@ -350,7 +350,7 @@ nav{
   flex-direction: column;
   gap: 15px;
   border: rgba(196, 196, 196, 0.2) 1px solid;
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 15px;
 }
 
@@ -369,6 +369,64 @@ nav{
   font-size: 15px;
   padding-right: 60px;
 }
+
+.wh-sec{
+  display: flex;
+  flex-direction: column;
+  border: rgba(196, 196, 196, 0.2) 1px solid;
+  border-radius: 15px;
+  padding: 10px 15px;
+  gap: 10px;
+}
+
+.wh-img{
+  width: 80px;
+  border-radius: 7px;
+}
+
+.wh1{
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.wh1-details{
+  display: flex;
+  flex-direction: column;
+}
+
+.trends{
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.trend-top{
+  display: flex;
+  justify-content: space-between;
+}
+
+.trend-text{
+  color: #1D9BF0;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.trend-text:hover{
+  text-decoration: underline;
+}
+
+.trend-details{
+  font-size: 13px;
+  color: rgba(196, 196, 196, 0.6);
+}
+
+.trends-list{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
 
 
 
