@@ -401,6 +401,10 @@ nav{
   cursor: pointer;
 }
 
+.trends:hover{
+  background: rgba(77, 76, 76, 0.2);
+}
+
 .trend-top{
   display: flex;
   justify-content: space-between;
@@ -412,9 +416,6 @@ nav{
   font-size: 13px;
 }
 
-.trend-text:hover{
-  text-decoration: underline;
-}
 
 .trend-details{
   font-size: 13px;
@@ -454,11 +455,22 @@ nav{
   gap: 10px;
 } 
 
+.wtf-main:hover{
+  background: rgba(77, 76, 76, 0.2);
+}
+
 .wtf-main2{
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
+
+.wtf-main3{
+ display: flex;
+ align-items: center;
+ gap: 4px;
+}
+
 
 .profile-pic2{
   width: 46px;
@@ -466,6 +478,13 @@ nav{
   object-fit: contain;
   border-radius: 23px;
   cursor: pointer;
+}
+
+.options2{
+  width: 18px;
+  color: rgba(196, 196, 196, 0.6);
+  cursor: pointer;
+  align-self: end;
 }
 
 /*@media (max-width: 1000px){
