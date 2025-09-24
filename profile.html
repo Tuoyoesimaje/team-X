@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DYEN - Web Development Team</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            font-family: 'Segoe UI', Arial, sans-serif;
+
+        }
+
+        body {
+
+            background-color: #000;
+
+            color: #fff;
+
+            line-height: 1.5;
+
+        }
+
+        .container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 15px;
+
+        }
+
+        /* Header and Cover Photo */
+
+        .profile-header {
+
+            position: relative;
+
+            margin-bottom: 60px;
+
+        }
+
+        .cover-photo {
+
+            height: 200px;
+
+            background: linear-gradient(45deg, #1DA1F2, #794BC4);
+
+            border-bottom: 1px solid #2F3336;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+        .cover-overlay {
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background: rgba(0, 0, 0, 0.5);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+            text-align: center;
+
+        }
+
+        .cover-text {
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            max-width: 600px;
+
+        }
+
+        .profile-info {
+
+            padding: 0 15px;
+
+        }
+
+        .profile-avatar {
+
+            width: 135px;
+
+            height: 135px;
+
+            border-radius: 50%;
+
+            border: 4px solid #000;
+
+            background: #333;
+
+            position: absolute;
+
+            top: 140px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 60px;
+
+            color: #1DA1F2;
+
+            background: linear-gradient(45deg, #1DA1F2, #794BC4);
+
+        }
+
+        .profile-actions {
+
+            display: flex;
+
+            justify-content: flex-end;
+
+            padding: 15px 0;
+
+        }
+
+        .btn {
+
+            padding: 8px 16px;
+
+            border-radius: 20px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-left: 10px;
+
+            border: none;
+
+            transition: all 0.3s;
+
+        }
+
+        .btn-outline {
+
+            background: transparent;
+
+            border: 1px solid #536471;
+
+            color: #fff;
+
+        }
+
+        .btn-primary {
+
+            background: #fff;
+
+            color: #000;
+
+        }
+
+        .btn-follow {
+
+            background: #1DA1F2;
+
+            color: #fff;
+
+        }
+
+        .btn:hover {
+
+            opacity: 0.9;
+
+            transform: scale(1.05);
+
+        }
+
+        /* Profile Details */
+
+        .profile-details {
+
+            padding: 15px 0;
+
+        }
+
+        .profile-name {
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            margin-bottom: 5px;
+
+        }
+
+        .profile-handle {
+
+            color: #71767B;
+
+            margin-bottom: 15px;
+
+        }
+
+        .profile-bio {
+
+            margin-bottom: 15px;
+
+            font-size: 15px;
+
+            line-height: 1.6;
+
+        }
+
+        .profile-bio strong {
+
+            color: #1DA1F2;
+
+        }
+
+        .profile-location, .profile-joined {
+
+            color: #71767B;
+
+            margin-bottom: 5px;
+
+            font-size: 14px;
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+        .profile-location i, .profile-joined i {
+
+            margin-right: 5px;
+
+        }
+
+        .profile-stats {
+
+            display: flex;
+
+            margin-top: 15px;
+
+        }
+
+        .stat {
+
+            margin-right: 15px;
+
+            color: #71767B;
+
+            font-size: 14px;
+
+        }
+
+        .stat span {
+
+            color: #fff;
+
+            font-weight: bold;
+
+        }
+
+        /* Navigation */
+
+        .profile-nav {
+
+            border-bottom: 1px solid #2F3336;
+
+        }
+
+        .nav-tabs {
+
+            display: flex;
+
+            list-style: none;
+
+            justify-content: space-around;
+
+        }
+
+        .nav-tab {
+
+            flex: 1;
+
+            text-align: center;
+
+            padding: 15px 0;
+
+            color: #71767B;
+
+            font-weight: bold;
+
+            font-size: 15px;
+
+            cursor: pointer;
+
+            position: relative;
+
+            transition: color 0.3s;
+
+        }
+
+        .nav-tab.active {
+
+            color: #fff;
+
+        }
+
+        .nav-tab.active::after {
+
+            content: '';
+
+            position: absolute;
+
+            bottom: 0;
+
+            left: 25%;
+
+            width: 50%;
+
+            height: 4px;
+
+            background: #1DA1F2;
+
+            border-radius: 2px;
+
+        }
+
+        .nav-tab:hover {
+
+            color: #1DA1F2;
+
+        }
+
+        /* Tweets */
+
+        .tweets-container {
+
+            padding: 15px 0;
+
+        }
+
+        .tweet {
+
+            display: flex;
+
+            padding: 15px;
+
+            border-bottom: 1px solid #2F3336;
+
+            transition: background 0.3s;
+
+        }
+
+        .tweet:hover {
+
+            background: rgba(255, 255, 255, 0.03);
+
+        }
+
+        .tweet-avatar {
+
+            width: 48px;
+
+            height: 48px;
+
+            border-radius: 50%;
+
+            background: #333;
+
+            margin-right: 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 20px;
+
+            color: #1DA1F2;
+
+            background: linear-gradient(45deg, #1DA1F2, #794BC4);
+
+        }
+
+        .tweet-content {
+
+            flex: 1;
+
+        }
+
+        .tweet-header {
+
+            display: flex;
+
+            align-items: center;
+
+            margin-bottom: 5px;
+
+            flex-wrap: wrap;
+
+        }
+
+        .tweet-name {
+
+            font-weight: bold;
+
+            margin-right: 5px;
+
+        }
+
+        .tweet-handle, .tweet-time {
+
+            color: #71767B;
+
+            margin-right: 5px;
+
+        }
+
+        .tweet-text {
+
+            margin-bottom: 10px;
+
+            line-height: 1.6;
+
+        }
+
+        .tweet-text a {
+
+            color: #1DA1F2;
+
+            text-decoration: none;
+
+        }
+
+        .tweet-text a:hover {
+
+            text-decoration: underline;
+
+        }
+
+        .tweet-actions {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            max-width: 425px;
+
+            color: #71767B;
+
+        }
+
+        .tweet-action {
+
+            display: flex;
+
+            align-items: center;
+
+            cursor: pointer;
+
+            transition: color 0.3s;
+
+        }
+
+        .tweet-action i {
+
+            margin-right: 5px;
+
+            padding: 8px;
+
+            border-radius: 50%;
+
+            transition: background 0.2s;
+
+        }
+
+        .tweet-action:hover i {
+
+            background: rgba(29, 161, 242, 0.1);
+
+            color: #1DA1F2;
+
+        }
+
+        .hashtag {
+
+            color: #1DA1F2;
+
+        }
+
+        /* Course Highlights */
+
+        .course-highlights {
+
+            background: #15181C;
+
+            border-radius: 15px;
+
+            padding: 20px;
+
+            margin: 20px 0;
+
+            border: 1px solid #2F3336;
+
+        }
+
+        .course-title {
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+
+            color: #1DA1F2;
+
+        }
+
+        .course-list {
+
+            display: grid;
+
+            grid-template-columns: 1fr;
+
+            gap: 10px;
+
+        }
+
+        .course-item {
+
+            padding: 10px;
+
+            background: rgba(29, 161, 242, 0.1);
+
+            border-radius: 8px;
+
+            font-size: 14px;
+
+        }
+
+        /* Responsive Design */
+
+        @media (min-width: 768px) {
+
+            .cover-photo {
+
+                height: 300px;
+
+            }
+
+            
+
+            .cover-text {
+
+                font-size: 32px;
+
+            }
+
+            
+
+            .profile-avatar {
+
+                width: 150px;
+
+                height: 150px;
+
+                top: 200px;
+
+                font-size: 70px;
+
+            }
+
+            
+
+            .profile-actions {
+
+                padding: 20px 0;
+
+            }
+
+            
+
+            .profile-name {
+
+                font-size: 24px;
+
+            }
+
+            
+
+            .nav-tabs {
+
+                justify-content: flex-start;
+
+            }
+
+            
+
+            .nav-tab {
+
+                flex: none;
+
+                padding: 15px 20px;
+
+            }
+
+            
+
+            .tweet {
+
+                padding: 20px;
+
+            }
+
+            
+
+            .course-list {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+        }
+
+        @media (min-width: 1024px) {
+
+            .profile-info {
+
+                display: flex;
+
+                justify-content: space-between;
+
+                align-items: flex-start;
+
+            }
+
+            
+
+            .profile-details {
+
+                margin-left: 165px;
+
+            }
+
+            
+
+            .profile-actions {
+
+                margin-top: 10px;
+
+            }
+
+            
+
+            .course-list {
+
+                grid-template-columns: 1fr 1fr 1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Profile Header -->
+
+        <div class="profile-header">
+
+            <div class="cover-photo">
+
+                <div class="cover-overlay">
+
+                    <div class="cover-text">Empowering Developers, Building the Future of Web Development</div>
+
+                </div>
+
+            </div>
+
+            <div class="profile-info">
+
+                <div class="profile-avatar">
+
+                    <i class="fas fa-code"></i>
+
+                </div>
+
+                <div class="profile-actions">
+
+                    <button class="btn btn-outline">
+
+                        <i class="fas fa-ellipsis"></i>
+
+                    </button>
+
+                    <button class="btn btn-follow">Join Our Team</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Profile Details -->
+
+        <div class="profile-details">
+
+            <div class="profile-name">DYEN Web Development</div>
+
+            <div class="profile-handle">@dyen_webdev</div>
+
+            <div class="profile-bio">
+
+                <strong>Empowering developers to build amazing web experiences.</strong> 
+
+                We offer web development courses and mentorship. Don't give up on your coding journey! 
+
+                Join our team of passionate developers. #WebDev #NeverGiveUp #DYEN
+
+            </div>
+
+            <div class="profile-location">
+
+                <i class="fas fa-map-marker-alt"></i> Warri, Delta State, Nigeria
+
+            </div>
+
+            <div class="profile-joined">
+
+                <i class="far fa-calendar"></i> Joined January 2023
+
+            </div>
+
+            <div class="profile-stats">
+
+                <div class="stat">
+
+                    <span>300</span> Following
+
+                </div>
+
+                <div class="stat">
+
+                    <span>9.15M</span> Followers
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Course Highlights -->
+
+        <div class="course-highlights">
+
+            <div class="course-title">Featured Web Development Courses</div>
+
+            <div class="course-list">
+
+                <div class="course-item">Web Design & Development</div>
+
+                <div class="course-item">Product Design (UI/UX)</div>
+
+                <div class="course-item">Digital Marketing</div>
+
+                <div class="course-item">AI Fundamentals</div>
+
+                <div class="course-item">Social Media Management</div>
+
+                <div class="course-item">Business Fundamentals</div>
+
+            </div>
+
+        </div>
+
+        <!-- Navigation -->
+
+        <div class="profile-nav">
+
+            <ul class="nav-tabs">
+
+                <li class="nav-tab active">Posts</li>
+
+                <li class="nav-tab">Courses</li>
+
+                <li class="nav-tab">Resources</li>
+
+                <li class="nav-tab">Team</li>
+
+            </ul>
+
+        </div>
+
+        <!-- Tweets -->
+
+        <div class="tweets-container">
+
+            <div class="tweet">
+
+                <div class="tweet-avatar">
+
+                    <i class="fas fa-code"></i>
+
+                </div>
+
+                <div class="tweet-content">
+
+                    <div class="tweet-header">
+
+                        <div class="tweet-name">DYEN Web Development</div>
+
+                        <div class="tweet-handle">@dyen_webdev</div>
+
+                        <div class="tweet-time">· 2h</div>
+
+                    </div>
+
+                    <div class="tweet-text">
+
+                        To all the developers feeling stuck: Remember that every expert was once a beginner. 
+
+                        The bug you're fighting today is making you a better problem-solver tomorrow. 
+
+                        <span class="hashtag">#NeverGiveUp</span> <span class="hashtag">#WebDevJourney</span>
+
+                    </div>
+
+                    <div class="tweet-actions">
+
+                        <div class="tweet-action">
+
+                            <i class="far fa-comment"></i> 245
+
+                        </div>
+
+                        <div class="tweet-action">
+
+                            <i class="fas fa-retweet"></i> 1.2K
+
+                        </div>
+
+                        <div class="tweet-action">
+
+                            <i class="far fa-heart"></i> 5.7K
+
+                        </div>
+
+                        <div class="tweet-action">
+
+                            <i class="fas fa-share"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="tweet">
+
+                <div class="tweet-avatar">
+
+                    <i class="fas fa-code"></i>
+
+                </div>
+
+                <div class="tweet-content">
+
+                    <div class="tweet-header">
+
+                        <div class="tweet-name">DYEN Web Development</div>
+
+                        <div class="tweet-handle">@dyen_webdev</div>
+
+                        <div class="tweet-time">· 1d</div>
+
+                    </div>
+
+                    <div class="tweet-text">
+
+                        We're looking for passionate developers to join our team! Whether you're a frontend wizard, 
+
+                        backend expert, or just starting out - we value enthusiasm and willingness to learn. 
+
+                        DM us if you're interested! <span class="hashtag">#JoinOurTeam</span> <span class="hashtag">#WebDevCareers</span>
+
+                    </div>
+
+                    <div class="tweet-actions">
+
+                        <div class="tweet-action">
+
+                            <i class="far fa-comment"></i> 892
+
+                        </div>
+
+                        <div class="tweet-action">
+
+                            <i class="fas fa-retweet"></i> 3.4K
+
+                        </div>
+
+                        <div class="tweet-action">
+
+                            <i class="far fa-heart"></i> 18.5K
+
+                        </div>
+
+                        <div class="tweet-action">
+
+                            <i class="fas fa-share"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="tweet">
+
+                <div class="tweet-avatar">
+
+                    <i class="fas fa-code"></i>
+
+                </div>
+
+                <div class="tweet-content">
+
+                    <div class="tweet-header">
+
+                        <div class="tweet-name">DYEN Web Development</div>
+
+                        <div class="tweet-handle">@dyen_webdev</div>
+
+                        <div class="tweet-time">· 3d</div>
+
+                    </div>
+
+                    <div class="tweet-text">
+
+                        Our web development course is now accepting applications! Learn HTML, CSS, JavaScript, 
+
+                        React, and more. 4 months of intensive training with internship opportunities. 
+
+                        Visit <a href="https://dyen.org" target="_blank">dyen.org</a> to register!
+
+                        <span class="hashtag">#WebDevelopment</span> <span class="hashtag">#LearnToCode</span>
+
+                    </div>
+
+                    <div class="tweet-actions">
+
+                        <div class="tweet-action">
+
+                            <i class="far fa-comment"></i> 156
+
+                        </div>
+
+                        <div class="tweet-action">
+
+                            <i class="fas fa-retweet"></i> 542
+
+                        </div>
+
+                        <div class="tweet-action">
+
+                            <i class="far fa-heart"></i> 2.1K
+
+                        </div>
+
+                        <div class="tweet-action">
+
+                            <i class="fas fa-share"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="tweet">
+
+                <div class="tweet-avatar">
+
+                    <i class="fas fa-code"></i>
+
+                </div>
+
+                <div class="tweet-content">
+
+                    <div class="tweet-header">
+
+                        <div class="tweet-name">DYEN Web Development</div>
+
+                        <div class="tweet-handle">@dyen_webdev</div>
+
+                        <div class="tweet-time">· 5d</div>
+
+                    </div>
+
+                    <div class="tweet-text">
+
+                        Coding is not just about writing lines of text. It's about solving problems, 
+
+                        creating solutions, and building the future. Your code can change someone's life. 
+
+                        Keep pushing forward! <span class="hashtag">#DeveloperMindset</span> <span class="hashtag">#CodeWithPurpose</span>
+
+                    </div>
+
+                    <div class="tweet-actions">
+
+                        <div class="tweet-action">
+
+                            <i class="far fa-comment"></i> 432
+
+                        </div>
+
+                        <div class="tweet-action">
+
+                            <i class="fas fa-retweet"></i> 1.8K
+
+                        </div>
+
+                        <div class="tweet-action">
+
+                            <i class="far fa-heart"></i> 7.3K
+
+                        </div>
+
+                        <div class="tweet-action">
+
+                            <i class="fas fa-share"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        // Simple tab switching functionality
+
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+
+            tab.addEventListener('click', function() {
+
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+
+                this.classList.add('active');
+
+                
+
+                // In a real app, this would load different content based on the tab
+
+                if (this.textContent === 'Courses') {
+
+                    alert('Courses content would load here in a real application');
+
+                } else if (this.textContent === 'Resources') {
+
+                    alert('Resources content would load here in a real application');
+
+                } else if (this.textContent === 'Team') {
+
+                    alert('Team information would load here in a real application');
+
+                }
+
+            });
+
+        });
+
+        // Follow/Join button toggle
+
+        const followBtn = document.querySelector('.btn-follow');
+
+        followBtn.addEventListener('click', function() {
+
+            if (this.textContent === 'Join Our Team') {
+
+                this.textContent = 'Applied!';
+
+                this.classList.add('btn-outline');
+
+                this.classList.remove('btn-follow');
+
+                alert('Thank you for your interest! We will contact you soon.');
+
+            } else {
+
+                this.textContent = 'Join Our Team';
+
+                this.classList.remove('btn-outline');
+
+                this.classList.add('btn-follow');
+
+            }
+
+        });
+
+        // Add some interactive elements to tweets
+
+        document.querySelectorAll('.tweet-action').forEach(action => {
+
+            action.addEventListener('click', function() {
+
+                const icon = this.querySelector('i');
+
+                const count = this.querySelector('span');
+
+                
+
+                if (icon.classList.contains('far')) {
+
+                    icon.classList.remove('far');
+
+                    icon.classList.add('fas');
+
+                    
+
+                    if (count) {
+
+                        let currentCount = parseInt(count.textContent);
+
+                        count.textContent = (currentCount + 1).toLocaleString();
+
+                    }
+
+                    
+
+                    this.style.color = '#1DA1F2';
+
+                } else {
+
+                    icon.classList.remove('fas');
+
+                    icon.classList.add('far');
+
+                    
+
+                    if (count) {
+
+                        let currentCount = parseInt(count.textContent);
+
+                        count.textContent = (currentCount - 1).toLocaleString();
+
+                    }
+
+                    
+
+                    this.style.color = '#71767B';
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
