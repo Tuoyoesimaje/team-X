@@ -30,7 +30,7 @@ body{
   display: flex;
   flex-direction: column;
 }
-.a-nav{
+.a-nav, .a-nav1, .a-nav2, .a-nav3{
   display: flex;
   width: 100%;
   text-decoration: none;
@@ -39,7 +39,7 @@ body{
 .nav-item{
   display: flex;
   align-items: center;
-  padding: 12px;
+  padding: 14px;
   justify-content: center;
 }
 
@@ -52,7 +52,7 @@ body{
 }
 
 .nav-icon{
-  width: 25px;
+  width: 26px;
 }
 
 .nav-text{
@@ -80,8 +80,8 @@ body{
 }
 
 .btn-cont3b{
-  padding: 6px 6px ;
-  border-radius: 22px;
+  padding: 13px 13px ;
+  border-radius: 26px;
   background-color: white;
   display: flex;
   align-items: center;
@@ -97,13 +97,12 @@ body{
   color: black;
   background: white(112, 110, 110);
   border: none;
-  padding: 10px 16px;
+  padding: 16px 90px;
   font-size: 14px;
   font-weight: 700;
-  border-radius: 20px;
+  border-radius: 45px;
   margin: 0px 0;
   cursor: pointer;
-  width: 167px;
 }
 
 
@@ -695,6 +694,22 @@ nav{
   }
 
   .sidebar{
+    display: none;
+  }
+}
+
+@media (max-height: 718px){
+  .a-nav3{
+    display: none;
+  }
+}
+@media (max-height: 688px){
+  .a-nav2{
+    display: none;
+  }
+}
+@media (max-height: 618px){
+  .a-nav1{
     display: none;
   }
 }
