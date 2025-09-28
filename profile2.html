@@ -211,19 +211,18 @@
               </div>
             </div>
             <div class="profile-nav">
-              <nav>
-                <div class="nav-item2 active">Posts</div>
-                <div class="nav-item2">Replies</div>
-                <div class="nav-item2">Highlights</div>
-                <div class="nav-item2">Articles</div>
-                <div class="nav-item2">Media</div>
-                <div class="nav-item2">Likes</div>
+              <nav class="tabs">
+                <div class="nav-item2" onclick="showTab('posts-tab')"><span>Posts</span></div>
+                <div class="nav-item2" onclick="showTab('replies-tab')"><span>Replies</span></div>
+                <div class="nav-item2" onclick="showTab('highlights-tab')"><span>Highlights</span></div>
+                <div class="nav-item2" onclick="showTab('Articles-tab')"><span>Articles</span></div>
+                <div class="nav-item2" onclick="showTab('media-tab')"><span>Media</span></div>
+                <div class="nav-item2" onclick="showTab('likes-tab')"><span>Likes</span></div>
               </nav>
             </div>
           </div>
 
-          
-          <div class="content">
+          <div id="posts-tab" class="tab-content active">
             <div class="content-container">
               <div >
                 <img src="images/porfoilio.png" alt="profilePic" class="profile-pic">
@@ -257,9 +256,9 @@
             </div>
           </div>
 
-          <div class="content">
+          <div id="replies-tab" class="tab-content">
             <div class="content-container">
-              <div>
+              <div >
                 <img src="images/porfoilio.png" alt="profilePic" class="profile-pic">
               </div>
               <div class="content-post">
@@ -273,41 +272,7 @@
                   </div>
                 </div>
                 <div class="post-text">
-                  <span>🚨 Breaking News </span>
-                  <div>
-                    <span>Ruben Amorim has made Inter Milan’s Federico Dimarco his primary target for Manchester United in the January transfer window and is eager to bring him in.</span>
-                  </div>
-                  <span class="post-tag">@napolista</span>
-                </div>
-                <div class="photocont"><img src="images/porfoilio.png" alt="" class="postphoto"></div>
-                <div class="post-footer">
-                  <div class="icon-div"><img src="svg/comment.svg" alt="" class="post-icon2"><span class="post-text2">6.2k</span></div>
-                  <div class="icon-div"><img src="svg/u-turn.svg" alt="" class="post-icon2"><span class="post-text2">1.9k</span></div>
-                  <div class="icon-div"><img src="svg/heart.svg" alt="" class="post-icon2"><span class="post-text2">26k</span></div>
-                  <div class="icon-div"><img src="svg/bar-chart.svg" alt="" class="post-icon3"><span class="post-text2">3.1m</span></div>
-                  <div><img src="svg/bookmark.svg" alt="" class="post-icon4"><img src="svg/upload.svg" alt="" class="post-icon4"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="content">
-            <div class="content-container">
-              <div>
-                <img src="images/porfoilio.png" alt="profilePic" class="profile-pic">
-              </div>
-              <div class="content-post">
-                <div class="post-top">
-                  <div class="top-con">
-                    <span class="username">SimplyUtd</span><span class="username2">@SimplyUtd &middot;  <span class="time">9h</span></span>
-                  </div>
-                  <div class="post-topleft">
-                    <img src="svg/grok.svg" alt="" class="options">
-                    <img src="svg/3-dot.svg" alt="" class="options">
-                  </div>
-                </div>
-                <div class="post-text">
-                  <span>🚨 Breaking News </span>
+                  <span>🚨 Breaking New </span>
                   <div>
                     <span>Ruben Amorim has made Inter Milan’s Federico Dimarco his primary target for Manchester United in the January transfer window and is eager to bring him in.</span>
                   </div>
@@ -325,6 +290,18 @@
             </div>
           </div>
           
+          <div id="highlights-tab" class="tab-content">
+
+          </div>
+
+          <div id="Articles-tab" class="tab-content">
+          </div>
+
+          <div id="media-tab" class="tab-content">
+          </div>
+
+          <div id="likes-tab" class="tab-content">
+          </div>
         </div>
 
         <!--mobile navigation-->
@@ -342,48 +319,9 @@
       <div class="left-view">
         <div class="search-sec"><input type="search" placeholder="Search" class="search-input"></div>
         
-        <div class="wh-sec">
-          <div class="header-w"><h3>What's happening?</h3></div>
-
-          <div class="wh1">
-            <div><img src="images/porfoilio.png" alt="" class="wh-img"></div>
-            <div class="wh1-details">
-              <div><h5>New York Fashion Week SS26</h5></div>
-              <div><span class="trend-details">LIVE</span></div>
-            </div>
-          </div>
-          <div class="trends-list">
-            <div class="trends">
-              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
-              <div><H4>Charlie Kirk</H4></div>
-              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
-              <div><span class="trend-details">3.04m posts</span></div>
-            </div>
-            <div class="trends">
-              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
-              <div><H4>Charlie Kirk</H4></div>
-              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
-              <div><span class="trend-details">3.04m posts</span></div>
-            </div>
-            <div class="trends">
-              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
-              <div><H4>Charlie Kirk</H4></div>
-              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
-              <div><span class="trend-details">3.04m posts</span></div>
-            </div>
-            <div class="trends">
-              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
-              <div><H4>Charlie Kirk</H4></div>
-              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
-              <div><span class="trend-details">3.04m posts</span></div>
-            </div>
-          </div>
-          <div><span class="show" >Show more</span></div>
-
-        </div>
         <div class="wtf-sec">
           <div>
-            <h3 class="header-w">Who to follow</h3>
+            <h3 class="header-w">You might like</h3>
           </div>
           <div class="wtf-main">
             
@@ -447,6 +385,46 @@
           </div>
 
         </div>
+
+        <div class="wh-sec">
+          <div class="header-w"><h3>What's happening?</h3></div>
+
+          <div class="wh1">
+            <div><img src="images/porfoilio.png" alt="" class="wh-img"></div>
+            <div class="wh1-details">
+              <div><h5>New York Fashion Week SS26</h5></div>
+              <div><span class="trend-details">LIVE</span></div>
+            </div>
+          </div>
+          <div class="trends-list">
+            <div class="trends">
+              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
+              <div><H4>Charlie Kirk</H4></div>
+              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
+              <div><span class="trend-details">3.04m posts</span></div>
+            </div>
+            <div class="trends">
+              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
+              <div><H4>Charlie Kirk</H4></div>
+              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
+              <div><span class="trend-details">3.04m posts</span></div>
+            </div>
+            <div class="trends">
+              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
+              <div><H4>Charlie Kirk</H4></div>
+              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
+              <div><span class="trend-details">3.04m posts</span></div>
+            </div>
+            <div class="trends">
+              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
+              <div><H4>Charlie Kirk</H4></div>
+              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
+              <div><span class="trend-details">3.04m posts</span></div>
+            </div>
+          </div>
+          <div><span class="show" >Show more</span></div>
+
+        </div>
       </div>
     </div>
   </div>
@@ -473,6 +451,16 @@
       </div>
     </nav>
   </div>
+  <script>
+    function showTab(tabId) {
+      // hide all tabs
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      // show only the one clicked
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
 

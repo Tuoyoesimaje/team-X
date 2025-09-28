@@ -43,6 +43,11 @@ body{
   justify-content: center;
 }
 
+.nav-item2{
+  cursor: pointer;
+}
+
+
 .logo-nav1{
   margin: 12px;
   margin-bottom: 0;
@@ -288,7 +293,6 @@ nav{
   display: flex;
   flex-direction: column;
   width: 100%;
-  border-bottom: rgba(196, 196, 196, 0.2) 1px solid;
   padding-bottom: 10px;
   padding-left: 10px;
   margin-top: 5px;
@@ -361,6 +365,23 @@ nav{
   height: auto;
   border-bottom: rgba(196, 196, 196, 0.2) 1px solid;
 }
+
+.tab-content{
+  width: 97%;
+  height: auto;
+  border-bottom: rgba(196, 196, 196, 0.2) 1px solid;
+  display: none;
+}
+
+
+
+.tab-content.active{
+  width: 97%;
+  height: auto;
+  border-bottom: rgba(196, 196, 196, 0.2) 1px solid;
+  display: block;
+}
+
 
 .content-container{
   display: flex;
