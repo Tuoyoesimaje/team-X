@@ -60,6 +60,7 @@ body{
   width: 26px;
 }
 
+
 .nav-text{
   font-weight: 400;
   font-size: 19px;
@@ -136,6 +137,7 @@ body{
   top: 0;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px); 
+  z-index: 1;
 }
 
 .header-cont{
@@ -150,6 +152,7 @@ body{
   background: rgba(0, 0, 0, 0.5);
   align-content: center;
   backdrop-filter: blur(10px); 
+  z-index: 1;
 }
 
 .header-cont1{
@@ -159,6 +162,25 @@ body{
   justify-content: space-between;
   padding: 5px 10px;
   gap: 10px; 
+}
+
+.main-profile-pic-cont1{
+  position: relative;
+  margin: 35px 0;
+}
+.main-profile-pic-cont{
+  padding: 3px;
+  padding-bottom: 1px;
+  background: black;
+  border-radius: 70px;
+  position: absolute;
+  bottom: -15px;
+}
+.main-profile-pic{
+  width: 133px;
+  border-radius: 66.5px;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .header-cont2{
