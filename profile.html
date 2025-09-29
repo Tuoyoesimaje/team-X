@@ -1,1221 +1,571 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>DYEN - Web Development Team</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-
-        * {
-
-            margin: 0;
-
-            padding: 0;
-
-            box-sizing: border-box;
-
-            font-family: 'Segoe UI', Arial, sans-serif;
-
-        }
-
-        body {
-
-            background-color: #000;
-
-            color: #fff;
-
-            line-height: 1.5;
-
-        }
-
-        .container {
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-            padding: 0 15px;
-
-        }
-
-        /* Header and Cover Photo */
-
-        .profile-header {
-
-            position: relative;
-
-            margin-bottom: 60px;
-
-        }
-
-        .cover-photo {
-
-            height: 200px;
-
-            background: linear-gradient(45deg, #1DA1F2, #794BC4);
-
-            border-bottom: 1px solid #2F3336;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            position: relative;
-
-            overflow: hidden;
-
-        }
-
-        .cover-overlay {
-
-            position: absolute;
-
-            top: 0;
-
-            left: 0;
-
-            width: 100%;
-
-            height: 100%;
-
-            background: rgba(0, 0, 0, 0.5);
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            padding: 20px;
-
-            text-align: center;
-
-        }
-
-        .cover-text {
-
-            font-size: 24px;
-
-            font-weight: bold;
-
-            max-width: 600px;
-
-        }
-
-        .profile-info {
-
-            padding: 0 15px;
-
-        }
-
-        .profile-avatar {
-
-            width: 135px;
-
-            height: 135px;
-
-            border-radius: 50%;
-
-            border: 4px solid #000;
-
-            background: #333;
-
-            position: absolute;
-
-            top: 140px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            font-size: 60px;
-
-            color: #1DA1F2;
-
-            background: linear-gradient(45deg, #1DA1F2, #794BC4);
-
-        }
-
-        .profile-actions {
-
-            display: flex;
-
-            justify-content: flex-end;
-
-            padding: 15px 0;
-
-        }
-
-        .btn {
-
-            padding: 8px 16px;
-
-            border-radius: 20px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            margin-left: 10px;
-
-            border: none;
-
-            transition: all 0.3s;
-
-        }
-
-        .btn-outline {
-
-            background: transparent;
-
-            border: 1px solid #536471;
-
-            color: #fff;
-
-        }
-
-        .btn-primary {
-
-            background: #fff;
-
-            color: #000;
-
-        }
-
-        .btn-follow {
-
-            background: #1DA1F2;
-
-            color: #fff;
-
-        }
-
-        .btn:hover {
-
-            opacity: 0.9;
-
-            transform: scale(1.05);
-
-        }
-
-        /* Profile Details */
-
-        .profile-details {
-
-            padding: 15px 0;
-
-        }
-
-        .profile-name {
-
-            font-size: 20px;
-
-            font-weight: bold;
-
-            margin-bottom: 5px;
-
-        }
-
-        .profile-handle {
-
-            color: #71767B;
-
-            margin-bottom: 15px;
-
-        }
-
-        .profile-bio {
-
-            margin-bottom: 15px;
-
-            font-size: 15px;
-
-            line-height: 1.6;
-
-        }
-
-        .profile-bio strong {
-
-            color: #1DA1F2;
-
-        }
-
-        .profile-location, .profile-joined {
-
-            color: #71767B;
-
-            margin-bottom: 5px;
-
-            font-size: 14px;
-
-            display: flex;
-
-            align-items: center;
-
-        }
-
-        .profile-location i, .profile-joined i {
-
-            margin-right: 5px;
-
-        }
-
-        .profile-stats {
-
-            display: flex;
-
-            margin-top: 15px;
-
-        }
-
-        .stat {
-
-            margin-right: 15px;
-
-            color: #71767B;
-
-            font-size: 14px;
-
-        }
-
-        .stat span {
-
-            color: #fff;
-
-            font-weight: bold;
-
-        }
-
-        /* Navigation */
-
-        .profile-nav {
-
-            border-bottom: 1px solid #2F3336;
-
-        }
-
-        .nav-tabs {
-
-            display: flex;
-
-            list-style: none;
-
-            justify-content: space-around;
-
-        }
-
-        .nav-tab {
-
-            flex: 1;
-
-            text-align: center;
-
-            padding: 15px 0;
-
-            color: #71767B;
-
-            font-weight: bold;
-
-            font-size: 15px;
-
-            cursor: pointer;
-
-            position: relative;
-
-            transition: color 0.3s;
-
-        }
-
-        .nav-tab.active {
-
-            color: #fff;
-
-        }
-
-        .nav-tab.active::after {
-
-            content: '';
-
-            position: absolute;
-
-            bottom: 0;
-
-            left: 25%;
-
-            width: 50%;
-
-            height: 4px;
-
-            background: #1DA1F2;
-
-            border-radius: 2px;
-
-        }
-
-        .nav-tab:hover {
-
-            color: #1DA1F2;
-
-        }
-
-        /* Tweets */
-
-        .tweets-container {
-
-            padding: 15px 0;
-
-        }
-
-        .tweet {
-
-            display: flex;
-
-            padding: 15px;
-
-            border-bottom: 1px solid #2F3336;
-
-            transition: background 0.3s;
-
-        }
-
-        .tweet:hover {
-
-            background: rgba(255, 255, 255, 0.03);
-
-        }
-
-        .tweet-avatar {
-
-            width: 48px;
-
-            height: 48px;
-
-            border-radius: 50%;
-
-            background: #333;
-
-            margin-right: 15px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            font-size: 20px;
-
-            color: #1DA1F2;
-
-            background: linear-gradient(45deg, #1DA1F2, #794BC4);
-
-        }
-
-        .tweet-content {
-
-            flex: 1;
-
-        }
-
-        .tweet-header {
-
-            display: flex;
-
-            align-items: center;
-
-            margin-bottom: 5px;
-
-            flex-wrap: wrap;
-
-        }
-
-        .tweet-name {
-
-            font-weight: bold;
-
-            margin-right: 5px;
-
-        }
-
-        .tweet-handle, .tweet-time {
-
-            color: #71767B;
-
-            margin-right: 5px;
-
-        }
-
-        .tweet-text {
-
-            margin-bottom: 10px;
-
-            line-height: 1.6;
-
-        }
-
-        .tweet-text a {
-
-            color: #1DA1F2;
-
-            text-decoration: none;
-
-        }
-
-        .tweet-text a:hover {
-
-            text-decoration: underline;
-
-        }
-
-        .tweet-actions {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            max-width: 425px;
-
-            color: #71767B;
-
-        }
-
-        .tweet-action {
-
-            display: flex;
-
-            align-items: center;
-
-            cursor: pointer;
-
-            transition: color 0.3s;
-
-        }
-
-        .tweet-action i {
-
-            margin-right: 5px;
-
-            padding: 8px;
-
-            border-radius: 50%;
-
-            transition: background 0.2s;
-
-        }
-
-        .tweet-action:hover i {
-
-            background: rgba(29, 161, 242, 0.1);
-
-            color: #1DA1F2;
-
-        }
-
-        .hashtag {
-
-            color: #1DA1F2;
-
-        }
-
-        /* Course Highlights */
-
-        .course-highlights {
-
-            background: #15181C;
-
-            border-radius: 15px;
-
-            padding: 20px;
-
-            margin: 20px 0;
-
-            border: 1px solid #2F3336;
-
-        }
-
-        .course-title {
-
-            font-size: 18px;
-
-            font-weight: bold;
-
-            margin-bottom: 15px;
-
-            color: #1DA1F2;
-
-        }
-
-        .course-list {
-
-            display: grid;
-
-            grid-template-columns: 1fr;
-
-            gap: 10px;
-
-        }
-
-        .course-item {
-
-            padding: 10px;
-
-            background: rgba(29, 161, 242, 0.1);
-
-            border-radius: 8px;
-
-            font-size: 14px;
-
-        }
-
-        /* Responsive Design */
-
-        @media (min-width: 768px) {
-
-            .cover-photo {
-
-                height: 300px;
-
-            }
-
-            
-
-            .cover-text {
-
-                font-size: 32px;
-
-            }
-
-            
-
-            .profile-avatar {
-
-                width: 150px;
-
-                height: 150px;
-
-                top: 200px;
-
-                font-size: 70px;
-
-            }
-
-            
-
-            .profile-actions {
-
-                padding: 20px 0;
-
-            }
-
-            
-
-            .profile-name {
-
-                font-size: 24px;
-
-            }
-
-            
-
-            .nav-tabs {
-
-                justify-content: flex-start;
-
-            }
-
-            
-
-            .nav-tab {
-
-                flex: none;
-
-                padding: 15px 20px;
-
-            }
-
-            
-
-            .tweet {
-
-                padding: 20px;
-
-            }
-
-            
-
-            .course-list {
-
-                grid-template-columns: 1fr 1fr;
-
-            }
-
-        }
-
-        @media (min-width: 1024px) {
-
-            .profile-info {
-
-                display: flex;
-
-                justify-content: space-between;
-
-                align-items: flex-start;
-
-            }
-
-            
-
-            .profile-details {
-
-                margin-left: 165px;
-
-            }
-
-            
-
-            .profile-actions {
-
-                margin-top: 10px;
-
-            }
-
-            
-
-            .course-list {
-
-                grid-template-columns: 1fr 1fr 1fr;
-
-            }
-
-        }
-
-    </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <div class="container">
-
-        <!-- Profile Header -->
-
-        <div class="profile-header">
-
-            <div class="cover-photo">
-
-                <div class="cover-overlay">
-
-                    <div class="cover-text">Empowering Developers, Building the Future of Web Development</div>
-
-                </div>
-
+  <div class="wrapper">
+    <div class="sidebar">
+      <div class="sidebar-main">
+        <div class="logo-nav1">
+          <a href="index.html" class="logo-nav2">
+            <img src="svg/logo.svg" alt="" class="nav-icon">
+          </a>
+        </div>
+        <div class="a-nav">
+          <a href="index.html" class="a-nav">
+            <div class="nav-item">
+              
+              <img src="svg/home.svg" alt="" class="nav-icon">
+                <span class="nav-text">Home</span>
+              
             </div>
-
-            <div class="profile-info">
-
-                <div class="profile-avatar">
-
-                    <i class="fas fa-code"></i>
-
-                </div>
-
-                <div class="profile-actions">
-
-                    <button class="btn btn-outline">
-
-                        <i class="fas fa-ellipsis"></i>
-
-                    </button>
-
-                    <button class="btn btn-follow">Join Our Team</button>
-
-                </div>
-
-            </div>
-
+          </a>
+          
         </div>
 
-        <!-- Profile Details -->
-
-        <div class="profile-details">
-
-            <div class="profile-name">DYEN Web Development</div>
-
-            <div class="profile-handle">@dyen_webdev</div>
-
-            <div class="profile-bio">
-
-                <strong>Empowering developers to build amazing web experiences.</strong> 
-
-                We offer web development courses and mentorship. Don't give up on your coding journey! 
-
-                Join our team of passionate developers. #WebDev #NeverGiveUp #DYEN
-
+        <div class="a-nav">
+          <a href="index.html" class="a-nav">
+            <div class="nav-item">
+              
+              <img src="svg/search.svg" alt="" class="nav-icon">
+                <span class="nav-text">Explore</span>
+              
             </div>
-
-            <div class="profile-location">
-
-                <i class="fas fa-map-marker-alt"></i> Warri, Delta State, Nigeria
-
-            </div>
-
-            <div class="profile-joined">
-
-                <i class="far fa-calendar"></i> Joined January 2023
-
-            </div>
-
-            <div class="profile-stats">
-
-                <div class="stat">
-
-                    <span>300</span> Following
-
-                </div>
-
-                <div class="stat">
-
-                    <span>9.15M</span> Followers
-
-                </div>
-
-            </div>
-
+          </a>
+          
         </div>
 
-        <!-- Course Highlights -->
-
-        <div class="course-highlights">
-
-            <div class="course-title">Featured Web Development Courses</div>
-
-            <div class="course-list">
-
-                <div class="course-item">Web Design & Development</div>
-
-                <div class="course-item">Product Design (UI/UX)</div>
-
-                <div class="course-item">Digital Marketing</div>
-
-                <div class="course-item">AI Fundamentals</div>
-
-                <div class="course-item">Social Media Management</div>
-
-                <div class="course-item">Business Fundamentals</div>
-
+        <div class="a-nav">
+          <a href="index.html" class="a-nav">
+            <div class="nav-item">
+              
+              <img src="svg/bell.svg" alt="" class="nav-icon">
+                <span class="nav-text">Notifications</span>
+              
             </div>
-
+          </a>
+          
         </div>
 
-        <!-- Navigation -->
-
-        <div class="profile-nav">
-
-            <ul class="nav-tabs">
-
-                <li class="nav-tab active">Posts</li>
-
-                <li class="nav-tab">Courses</li>
-
-                <li class="nav-tab">Resources</li>
-
-                <li class="nav-tab">Team</li>
-
-            </ul>
-
+        <div class="a-nav">
+          <a href="index.html" class="a-nav">
+            <div class="nav-item">
+              
+              <img src="svg/email.svg" alt="" class="nav-icon">
+                <span class="nav-text">Messages</span>
+              
+            </div>
+          </a>
+          
         </div>
 
-        <!-- Tweets -->
-
-        <div class="tweets-container">
-
-            <div class="tweet">
-
-                <div class="tweet-avatar">
-
-                    <i class="fas fa-code"></i>
-
-                </div>
-
-                <div class="tweet-content">
-
-                    <div class="tweet-header">
-
-                        <div class="tweet-name">DYEN Web Development</div>
-
-                        <div class="tweet-handle">@dyen_webdev</div>
-
-                        <div class="tweet-time">· 2h</div>
-
-                    </div>
-
-                    <div class="tweet-text">
-
-                        To all the developers feeling stuck: Remember that every expert was once a beginner. 
-
-                        The bug you're fighting today is making you a better problem-solver tomorrow. 
-
-                        <span class="hashtag">#NeverGiveUp</span> <span class="hashtag">#WebDevJourney</span>
-
-                    </div>
-
-                    <div class="tweet-actions">
-
-                        <div class="tweet-action">
-
-                            <i class="far fa-comment"></i> 245
-
-                        </div>
-
-                        <div class="tweet-action">
-
-                            <i class="fas fa-retweet"></i> 1.2K
-
-                        </div>
-
-                        <div class="tweet-action">
-
-                            <i class="far fa-heart"></i> 5.7K
-
-                        </div>
-
-                        <div class="tweet-action">
-
-                            <i class="fas fa-share"></i>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+        <div class="a-nav">
+          <a href="index.html" class="a-nav">
+            <div class="nav-item">
+              
+              <img src="svg/grok.svg" alt="" class="nav-icon">
+                <span class="nav-text">Grok</span>
+              
             </div>
-
-            <div class="tweet">
-
-                <div class="tweet-avatar">
-
-                    <i class="fas fa-code"></i>
-
-                </div>
-
-                <div class="tweet-content">
-
-                    <div class="tweet-header">
-
-                        <div class="tweet-name">DYEN Web Development</div>
-
-                        <div class="tweet-handle">@dyen_webdev</div>
-
-                        <div class="tweet-time">· 1d</div>
-
-                    </div>
-
-                    <div class="tweet-text">
-
-                        We're looking for passionate developers to join our team! Whether you're a frontend wizard, 
-
-                        backend expert, or just starting out - we value enthusiasm and willingness to learn. 
-
-                        DM us if you're interested! <span class="hashtag">#JoinOurTeam</span> <span class="hashtag">#WebDevCareers</span>
-
-                    </div>
-
-                    <div class="tweet-actions">
-
-                        <div class="tweet-action">
-
-                            <i class="far fa-comment"></i> 892
-
-                        </div>
-
-                        <div class="tweet-action">
-
-                            <i class="fas fa-retweet"></i> 3.4K
-
-                        </div>
-
-                        <div class="tweet-action">
-
-                            <i class="far fa-heart"></i> 18.5K
-
-                        </div>
-
-                        <div class="tweet-action">
-
-                            <i class="fas fa-share"></i>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="tweet">
-
-                <div class="tweet-avatar">
-
-                    <i class="fas fa-code"></i>
-
-                </div>
-
-                <div class="tweet-content">
-
-                    <div class="tweet-header">
-
-                        <div class="tweet-name">DYEN Web Development</div>
-
-                        <div class="tweet-handle">@dyen_webdev</div>
-
-                        <div class="tweet-time">· 3d</div>
-
-                    </div>
-
-                    <div class="tweet-text">
-
-                        Our web development course is now accepting applications! Learn HTML, CSS, JavaScript, 
-
-                        React, and more. 4 months of intensive training with internship opportunities. 
-
-                        Visit <a href="https://dyen.org" target="_blank">dyen.org</a> to register!
-
-                        <span class="hashtag">#WebDevelopment</span> <span class="hashtag">#LearnToCode</span>
-
-                    </div>
-
-                    <div class="tweet-actions">
-
-                        <div class="tweet-action">
-
-                            <i class="far fa-comment"></i> 156
-
-                        </div>
-
-                        <div class="tweet-action">
-
-                            <i class="fas fa-retweet"></i> 542
-
-                        </div>
-
-                        <div class="tweet-action">
-
-                            <i class="far fa-heart"></i> 2.1K
-
-                        </div>
-
-                        <div class="tweet-action">
-
-                            <i class="fas fa-share"></i>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="tweet">
-
-                <div class="tweet-avatar">
-
-                    <i class="fas fa-code"></i>
-
-                </div>
-
-                <div class="tweet-content">
-
-                    <div class="tweet-header">
-
-                        <div class="tweet-name">DYEN Web Development</div>
-
-                        <div class="tweet-handle">@dyen_webdev</div>
-
-                        <div class="tweet-time">· 5d</div>
-
-                    </div>
-
-                    <div class="tweet-text">
-
-                        Coding is not just about writing lines of text. It's about solving problems, 
-
-                        creating solutions, and building the future. Your code can change someone's life. 
-
-                        Keep pushing forward! <span class="hashtag">#DeveloperMindset</span> <span class="hashtag">#CodeWithPurpose</span>
-
-                    </div>
-
-                    <div class="tweet-actions">
-
-                        <div class="tweet-action">
-
-                            <i class="far fa-comment"></i> 432
-
-                        </div>
-
-                        <div class="tweet-action">
-
-                            <i class="fas fa-retweet"></i> 1.8K
-
-                        </div>
-
-                        <div class="tweet-action">
-
-                            <i class="far fa-heart"></i> 7.3K
-
-                        </div>
-
-                        <div class="tweet-action">
-
-                            <i class="fas fa-share"></i>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+          </a>
+          
         </div>
 
+        <div class="a-nav1">
+          <a href="index.html" class="a-nav">
+            <div class="nav-item">
+              
+              <img src="svg/community.svg" alt="" class="nav-icon">
+                <span class="nav-text">Communities</span>
+              
+            </div>
+          </a>
+          
+        </div>
+
+        <div class="a-nav2">
+          <a href="index.html" class="a-nav">
+            <div class="nav-item">
+              
+              <img src="svg/logo.svg" alt="" class="nav-icon">
+                <span class="nav-text">Premium</span>
+              
+            </div>
+          </a>
+          
+        </div>
+
+        <div class="a-nav3">
+          <a href="index.html" class="a-nav">
+            <div class="nav-item">
+              
+              <img src="svg/thunder.svg" alt="" class="nav-icon">
+                <span class="nav-text">Verified Orgs</span>
+              
+            </div>
+          </a>
+          
+        </div>
+
+        <div class="a-nav">
+          <a href="profile.html" class="a-nav">
+            <div class="nav-item">
+              
+              <img src="svg/person.svg" alt="" class="nav-icon">
+                <span class="nav-text">Profile</span>
+              
+            </div>
+          </a>
+          
+        </div>
+
+        <div class="a-nav">
+          <a href="index.html" class="a-nav">
+            <div class="nav-item">
+              
+              <img src="svg/3-dot-in-circle.svg" alt="" class="nav-icon">
+                <span class="nav-text">More</span>
+              
+            </div>
+          </a>
+          
+        </div>
+
+        <div class="btn-cont2">
+          <button class="post-btn2">Post</button>
+        </div>
+
+        <div class="btn-cont3">
+          <div class="btn-cont3b">
+            <img src="svg/feather.svg" alt="" class="nav-icon2">
+          </div>
+        </div>
+
+      
+      </div>
+      <div class="sidebar-pro">
+        <div class="sidebar-pro2">
+          <div>
+            <img src="images/porfoilio.png" alt="" class="profile-pic3">
+          </div>
+          <div class="sidebar-pro3">
+            <span>Tuoyo Esimaje</span>
+            <span class="profile-joined">@tuo17281</span>
+          </div>
+        </div>
+        <div>
+          <img src="svg/3-dot.svg" alt="" class="side-icon">
+        </div>
+      </div>
     </div>
 
-    <script>
+    <div class="screen">
+      <div class="main-view">
+        
+        <div class="header-cont">
+          <div class="header-cont1">
+            <div>
+              <a href="index.html"><img src="svg/left-arrow.svg" alt="" class="icons"></div>
+              </a>
+            <div class="header-cont2">
+              <div>
+                <h3>Tuoyo Esimaje</h3>
+              </div>
+              <div>
+                <span class="trend-details">2 posts</span>
+              </div>
+            </div>
+          </div>
+          <div class="header-cont1">
+            <div><img src="svg/grok.svg" alt="" class="icons"></div>
+            <div> <img src="svg/search.svg" alt="" class="icons"></div>
+          </div>
+        </div>
 
-        // Simple tab switching functionality
 
-        document.querySelectorAll('.nav-tab').forEach(tab => {
+        <div id="for-you">
 
-            tab.addEventListener('click', function() {
+          <img src="svg/1080x360.jpeg" alt="" style="width: 100%; object-fit: contain;">
 
-                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+          <div class="profile-header">
+            <div class="profile-div1">
+              <div class="main-profile-pic-cont1">
+                <div class="main-profile-pic-cont">
+                  <img src="images/porfoilio.png" alt="" class="main-profile-pic">
+                </div>
+              </div>
+              <div>
+                <button class="post-btn">Edit profile</button>
+              </div>
+            </div>
+            <div class="profile-div2">
+              <div class="profile-div3">
+                <div>
+                  <h3>Tuoyo Esimaje</h3>
+                </div>
+                <div>
+                  <span class="profile-joined">@tuo17281</span>
+                </div>
+              </div>
+              <div>
+                <button><span><img src="" alt="">Get verified</span></button>
+              </div>
+            </div>
+            
+            <div>
+              <div class="profile-div4"><div><img src="svg/calender.svg" alt="" class="profile-icons"></div><span class="profile-joined">Joined July 2025</span></div>
+            </div>
+            <div class="profile-div5">
+              <div>
+                <span class="profile-follow2">3</span> <span class="profile-follow">Following</span>
+              </div>
+              <div>
+                <span class="profile-follow2">0</span> <span class="profile-follow">Followers</span>
+              </div>
+            </div>
+            <div class="profile-nav">
+              <nav class="tabs">
+                <div class="nav-item2" onclick="showTab('posts-tab')"><span>Posts</span></div>
+                <div class="nav-item2" onclick="showTab('replies-tab')"><span>Replies</span></div>
+                <div class="nav-item2" onclick="showTab('highlights-tab')"><span>Highlights</span></div>
+                <div class="nav-item2" onclick="showTab('Articles-tab')"><span>Articles</span></div>
+                <div class="nav-item2" onclick="showTab('media-tab')"><span>Media</span></div>
+                <div class="nav-item2" onclick="showTab('likes-tab')"><span>Likes</span></div>
+              </nav>
+            </div>
+          </div>
 
-                this.classList.add('active');
-
+          <div id="posts-tab" class="tab-content active">
+            
+            <div class="wtf-post">
+              <div>
+                <h3 class="header-w">Who to follow</h3>
+              </div>
+              <div class="wtf-main">
                 
+                <div><img src="images/porfoilio.png" alt="" class="profile-pic2">
+                </div>
+                <div class="wtf-main2">
+                  <div>
+                    <div class="wtf-main3">
+                      <span class="username">United Zone</span> <img src="svg/verified.svg" alt="" class="options2">
+                    </div>
+                    <div>
+                      <span class="username2">@ManUnitedZone_</span>
+                    </div>
+                  </div>
 
-                // In a real app, this would load different content based on the tab
-
-                if (this.textContent === 'Courses') {
-
-                    alert('Courses content would load here in a real application');
-
-                } else if (this.textContent === 'Resources') {
-
-                    alert('Resources content would load here in a real application');
-
-                } else if (this.textContent === 'Team') {
-
-                    alert('Team information would load here in a real application');
-
-                }
-
-            });
-
-        });
-
-        // Follow/Join button toggle
-
-        const followBtn = document.querySelector('.btn-follow');
-
-        followBtn.addEventListener('click', function() {
-
-            if (this.textContent === 'Join Our Team') {
-
-                this.textContent = 'Applied!';
-
-                this.classList.add('btn-outline');
-
-                this.classList.remove('btn-follow');
-
-                alert('Thank you for your interest! We will contact you soon.');
-
-            } else {
-
-                this.textContent = 'Join Our Team';
-
-                this.classList.remove('btn-outline');
-
-                this.classList.add('btn-follow');
-
-            }
-
-        });
-
-        // Add some interactive elements to tweets
-
-        document.querySelectorAll('.tweet-action').forEach(action => {
-
-            action.addEventListener('click', function() {
-
-                const icon = this.querySelector('i');
-
-                const count = this.querySelector('span');
-
+                  <div>
+                    <button class="follow-btn">Follow</button>
+                  </div>
+                </div>
+              </div>
+              <div class="wtf-main">
                 
+                <div><img src="images/porfoilio.png" alt="" class="profile-pic2">
+                </div>
+                <div class="wtf-main2">
+                  <div>
+                    <div class="wtf-main3">
+                      <span class="username">United Zone</span> <img src="svg/verified.svg" alt="" class="options2">
+                    </div>
+                    <div>
+                      <span class="username2">@ManUnitedZone_</span>
+                    </div>
+                  </div>
 
-                if (icon.classList.contains('far')) {
+                  <div>
+                    <button class="follow-btn">Follow</button>
+                  </div>
+                </div>
+              </div>
+              <div class="wtf-main">
+                
+                <div><img src="images/porfoilio.png" alt="" class="profile-pic2">
+                </div>
+                <div class="wtf-main2">
+                  <div>
+                    <div class="wtf-main3">
+                      <span class="username">United Zone</span> <img src="svg/verified.svg" alt="" class="options2">
+                    </div>
+                    <div>
+                      <span class="username2">@ManUnitedZone_</span>
+                    </div>
+                  </div>
 
-                    icon.classList.remove('far');
+                  <div>
+                    <button class="follow-btn">Follow</button>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <span class="show" >Show more</span>
+              </div>
 
-                    icon.classList.add('fas');
+            </div>
 
-                    
+          </div>
 
-                    if (count) {
+          <div id="replies-tab" class="tab-content">
+            <div class="content-container">
+              <div >
+                <img src="images/porfoilio.png" alt="profilePic" class="profile-pic">
+              </div>
+              <div class="content-post">
+                <div class="post-top">
+                  <div class="top-con">
+                    <span class="username">SimplyUtd</span><span class="username2">@SimplyUtd &middot;  <span class="time">9h</span></span>
+                  </div>
+                  <div class="post-topleft">
+                    <img src="svg/grok.svg" alt="" class="options">
+                    <img src="svg/3-dot.svg" alt="" class="options">
+                  </div>
+                </div>
+                <div class="post-text">
+                  <span>🚨 Breaking New </span>
+                  <div>
+                    <span>Ruben Amorim has made Inter Milan’s Federico Dimarco his primary target for Manchester United in the January transfer window and is eager to bring him in.</span>
+                  </div>
+                  <span class="post-tag">@napolista</span>
+                </div>
+                <div class="photocont"><img src="images/porfoilio.png" alt="" class="postphoto"></div>
+                <div class="post-footer">
+                  <div class="icon-div">
+                    <img src="svg/comment.svg" alt="" class="post-icon2">
+                    <span class="post-text2">6.2k</span>
+                  </div>
+                  <div class="icon-div2 icon-div">
+                    <img src="svg/u-turn.svg" alt="" class="post-icon2">
+                    <span class="post-text2">1.9k</span>
+                  </div>
+                  <div class="icon-div3 icon-div">
+                    <img src="svg/heart.svg" alt="" class="post-icon2">
+                    <span class="post-text2">26k</span>
+                  </div>
+                  <div class="icon-div">
+                    <img src="svg/bar-chart.svg" alt="" class="post-icon3">
+                    <span class="post-text2">3.1m</span>
+                  </div>
+                  <div>
+                    <img src="svg/bookmark.svg" alt="" class="post-icon4">
+                    <img src="svg/upload.svg" alt="" class="post-icon4">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div id="highlights-tab" class="tab-content">
+            <div class="tab-cont">
+              <h1>Highlight on your profile</h1>
+              <span class="profile-joined">You must be subscribed to Premium to highlight posts on your profile.</span>
+              <button class="post-btn3">Subscribe to Premium</button>
+            </div>
+          </div>
 
-                        let currentCount = parseInt(count.textContent);
+          <div id="Articles-tab" class="tab-content">
+            <div class="tab-cont">
+              <h1>Write Articles on X</h1>
+              <span class="profile-joined">You must be subscribed to Premium+ to write Articles on X</span>
+              <button class="post-btn3">Upgrade to Premium</button>
+            </div>
+          </div>
 
-                        count.textContent = (currentCount + 1).toLocaleString();
+          <div id="media-tab" class="tab-content">
+            <div class="tab-cont">
+              <h1>Lights, camera … attachments!</h1>
+              <span class="profile-joined">When you post photos or videos, they will show up here.</span>
+            </div>
+          </div>
 
-                    }
+          <div id="likes-tab" class="tab-content">
+            <div class="tab-cont">
+              <h1>You don’t have any likes yet</h1>
+              <span class="profile-joined">Tap the heart on any post to show it some love. When you do, it’ll show up here.</span>
+            </div>
+          </div>
+        </div>
 
-                    
+        <!--mobile navigation-->
+          <div class="mobile-nav">
+            <nav>
+              <div><a href="index.html"><img src="svg/home.svg" alt="" class="mobile-icons"></a></div>
+              <div><img src="svg/search.svg" alt="" class="mobile-icons"></div>
+              <div><img src="svg/grok.svg" alt="" class="mobile-icons"></div>
+              <div><img src="svg/bell.svg" alt="" class="mobile-icons"></div>
+              <div><img src="svg/email.svg" alt="" class="mobile-icons"></div>
+              <div><img src="svg/community.svg" alt="" class="mobile-icons"></div>
+            </nav>
+          </div>
+      </div>
+      <div class="left-view">
+        <div class="search-sec"><input type="search" placeholder="Search" class="search-input"></div>
+        
+        <div class="wtf-sec">
+          <div>
+            <h3 class="header-w">You might like</h3>
+          </div>
+          <div class="wtf-main">
+            
+            <div><img src="images/porfoilio.png" alt="" class="profile-pic2">
+            </div>
+            <div class="wtf-main2">
+              <div>
+                <div class="wtf-main3">
+                  <span class="username">United Zone</span> <img src="svg/verified.svg" alt="" class="options2">
+                </div>
+                <div>
+                  <span class="username2">@ManUnitedZone_</span>
+                </div>
+              </div>
 
-                    this.style.color = '#1DA1F2';
+              <div>
+                <button class="follow-btn">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div class="wtf-main">
+            
+            <div><img src="images/porfoilio.png" alt="" class="profile-pic2">
+            </div>
+            <div class="wtf-main2">
+              <div>
+                <div class="wtf-main3">
+                  <span class="username">United Zone</span> <img src="svg/verified.svg" alt="" class="options2">
+                </div>
+                <div>
+                  <span class="username2">@ManUnitedZone_</span>
+                </div>
+              </div>
 
-                } else {
+              <div>
+                <button class="follow-btn">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div class="wtf-main">
+            
+            <div><img src="images/porfoilio.png" alt="" class="profile-pic2">
+            </div>
+            <div class="wtf-main2">
+              <div>
+                <div class="wtf-main3">
+                  <span class="username">United Zone</span> <img src="svg/verified.svg" alt="" class="options2">
+                </div>
+                <div>
+                  <span class="username2">@ManUnitedZone_</span>
+                </div>
+              </div>
 
-                    icon.classList.remove('fas');
+              <div>
+                <button class="follow-btn">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <span class="show" >Show more</span>
+          </div>
 
-                    icon.classList.add('far');
+        </div>
 
-                    
+        <div class="wh-sec">
+          <div class="header-w"><h3>What's happening?</h3></div>
 
-                    if (count) {
+          <div class="wh1">
+            <div><img src="images/porfoilio.png" alt="" class="wh-img"></div>
+            <div class="wh1-details">
+              <div><h5>New York Fashion Week SS26</h5></div>
+              <div><span class="trend-details">LIVE</span></div>
+            </div>
+          </div>
+          <div class="trends-list">
+            <div class="trends">
+              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
+              <div><H4>Charlie Kirk</H4></div>
+              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
+              <div><span class="trend-details">3.04m posts</span></div>
+            </div>
+            <div class="trends">
+              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
+              <div><H4>Charlie Kirk</H4></div>
+              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
+              <div><span class="trend-details">3.04m posts</span></div>
+            </div>
+            <div class="trends">
+              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
+              <div><H4>Charlie Kirk</H4></div>
+              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
+              <div><span class="trend-details">3.04m posts</span></div>
+            </div>
+            <div class="trends">
+              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
+              <div><H4>Charlie Kirk</H4></div>
+              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
+              <div><span class="trend-details">3.04m posts</span></div>
+            </div>
+          </div>
+          <div><span class="show" >Show more</span></div>
 
-                        let currentCount = parseInt(count.textContent);
+        </div>
 
-                        count.textContent = (currentCount - 1).toLocaleString();
+        <div class="left-bottom">
+          <div class="left-bottom-items"><span class="username2">Terms of Service</span></div>
+          <div class="left-bottom-items"><span class="username2">Privacy Policy</span></div>
+          <div class="left-bottom-items"><span class="username2">Cookie Policy</span></div>
+        </div>
+        <div class="left-bottom2">
+          <div class="left-bottom-items2"><span class="username2">Accessibility</span></div>
+          <div class="left-bottom-items2"><span class="username2">Ads info</span></div>
+          <div class="left-bottom-items3">
+            <div class="left-bottom-items2 left-bottom-items3"><span class="username2">More <span class="space"></span>...</span>
+            </div>
+            <div class="left-bottom-items2 left-bottom-items3"> 
+              <span class="username2">© 2025 X Corp.</span>
+            </div>
+          </div>
+        </div>
 
-                    }
-
-                    
-
-                    this.style.color = '#71767B';
-
-                }
-
-            });
-
-        });
-
-    </script>
-
+      </div>
+    </div>
+  </div>
+  <!--mobile landscape nav-->
+  <div class="mobile-nav2">
+    <nav>
+      <div>
+        <img src="svg/home.svg" alt="" class="mobile-icons">
+      </div>
+      <div>
+        <img src="svg/search.svg" alt="" class="mobile-icons">
+      </div>
+      <div>
+        <img src="svg/grok.svg" alt="" class="mobile-icons">
+      </div>
+      <div>
+        <img src="svg/bell.svg" alt="" class="mobile-icons">
+      </div>
+      <div>
+        <img src="svg/email.svg" alt="" class="mobile-icons">
+      </div>
+      <div>
+        <img src="svg/community.svg" alt="" class="mobile-icons">
+      </div>
+    </nav>
+  </div>
+  <script>
+    function showTab(tabId) {
+      // hide all tabs
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      // show only the one clicked
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
 </body>
-
 </html>
+
+
