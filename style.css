@@ -834,7 +834,7 @@ nav{
 .media-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   gap: 5px;
   width: 600px;
   justify-content: start;
