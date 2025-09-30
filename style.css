@@ -51,6 +51,7 @@ body{
 
 .nav-item2{
   cursor: pointer;
+  font-size: 15px;
 }
 
 
@@ -959,7 +960,7 @@ nav{
   .tab-cont{
     margin: 15px 30px;
     padding: 0 10px;
-    margin-bottom: 80px;
+    margin-bottom: 200px;
   }
 
 
