@@ -172,12 +172,12 @@
             <div class="header-nav1"><a href="profile.html"><img src="images/mydp.jpg" alt="" class="profile-pic3"></a></div>
             <div class="header-nav2"><a href="home.html"><img src="svg/logo.svg" alt="" class="nav-icon3" style="padding-top: 10px;"></a></div>
           </div>
-          <nav>
-            <div class="head-div1" id="for-you"><span class="pages">For you</span></div>
-            <div class="head-div2" id="following"><span class="pages">Following</span></div>
-          </nav>
+          <nav class="tabs">
+             <div class="nav-item2 head-div1" onclick="showTab('for-you')"><span>For you</span></div>
+             <div class="nav-item2 head-div2" onclick="showTab('following')"><span>Following</span></div>
+           </nav>
         </div>
-        <div id="for-you">
+        <div id="for-you" class="tab-content active">
           <div class="post-area">
             <div class="pro-pic">
                 <img src="images/mydp.jpg" alt="profilePic" class="profile-pic">
@@ -322,7 +322,7 @@
           
         </div>
 
-        <div id="following">
+        <div id="following" class="tab-content">
           <div class="post-area">
             <div class="pro-pic">
                 <img src="images/mydp.jpg" alt="profilePic" class="profile-pic">
@@ -390,7 +390,7 @@
                 </div>
                 <div class="post-text">
                   <div>
-                    <span>First time in Manchester.</span>
+                    <span>First Time in Manchester.</span>
                   </div>
                 </div>
                 <div class="photocont"><img src="https://images.pexels.com/photos/27268763/pexels-photo-27268763.jpeg" alt="" class="postphoto"></div>
@@ -634,6 +634,14 @@
       </div>
     </nav>
   </div>
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
 
