@@ -166,80 +166,64 @@
     <div class="screen">
       <div class="main-view">
         
-        <div class="header-cont">
-          <div class="header-cont1">
-            <div>
-              <a href="index.html"><img src="svg/left-arrow.svg" alt="" class="icons"></div>
-              </a>
-            <div class="header-cont2">
-              <div>
-                <h3>Tuoyo Esimaje</h3>
-              </div>
-              <div>
-                <span class="trend-details">2 posts</span>
-              </div>
-            </div>
-          </div>
-          <div class="header-cont1">
-            <div><img src="svg/grok.svg" alt="" class="icons"></div>
-            <div> <img src="svg/search.svg" alt="" class="icons"></div>
-          </div>
+        <div class="header">
+          <nav>
+            <div class="head-div1"><span class="pages">For you</span></div>
+            <div class="head-div2"><span class="pages">Following</span></div>
+          </nav>
         </div>
-
-
         <div id="for-you">
-
-          <img src="svg/1080x360.jpeg" alt="" style="width: 100%; object-fit: contain;">
-
-          <div class="profile-header">
-            <div class="profile-div1">
-              <div class="main-profile-pic-cont1">
-                <div class="main-profile-pic-cont">
-                  <img src="images/porfoilio.png" alt="" class="main-profile-pic">
-                </div>
-              </div>
-              <div>
-                <button class="post-btn">Edit profile</button>
-              </div>
+          <div class="post-area">
+            <div class="pro-pic">
+                <img src="images/porfoilio.png" alt="profilePic" class="profile-pic">
             </div>
-            <div class="profile-div2">
-              <div class="profile-div3">
+            <div class="post-main">
+              
+              <div class="post-input">
                 <div>
-                  <h3>Tuoyo Esimaje</h3>
+                  <input type="text" placeholder="What's happening?" id="postinput" class="main-input">
                 </div>
-                <div>
-                  <span class="profile-joined">@tuo17281</span>
+                <!-- post visibility -->
+                <!--
+                <div class="visibility-btn">
+                  <div></div>
+                  <div><span class="visibility-text">Everyone can reply</span></div>
+                </div>
+                -->
+
+              </div>
+
+              <div class="post-sub">
+                <div class="post-icons">
+                  <div>
+                    <img src="svg/gallery.svg" alt="gallery" class="icons">
+                  </div>
+                  <div>
+                    <img src="svg/gif.svg" alt="gif" class="icons">
+                  </div>
+                  <div>
+                    <img src="svg/grok-blue.svg" alt="grok" class="icons">
+                  </div>
+                  <div>
+                    <img src="svg/preference-toggle.svg" alt="poll" class="icons">
+                  </div>
+                  <div>
+                    <img src="svg/smiley.svg" alt="emoji" class="icons">
+                  </div>
+                  <div>
+                    <img src="svg/calender.svg" alt="calender" class="icons">
+                  </div>
+                  <div>
+                    <img src="svg/location.svg" alt="location" class="icons">
+                  </div>
+                </div>
+                <div class="btn-cont"><button class="post-btn">Post</button>
                 </div>
               </div>
-              <div>
-                <button><span><img src="" alt="">Get verified</span></button>
-              </div>
-            </div>
-            
-            <div>
-              <div class="profile-div4"><div><img src="svg/calender.svg" alt="" class="profile-icons"></div><span class="profile-joined">Joined July 2025</span></div>
-            </div>
-            <div class="profile-div5">
-              <div>
-                <span class="profile-follow2">3</span> <span class="profile-follow">Following</span>
-              </div>
-              <div>
-                <span class="profile-follow2">0</span> <span class="profile-follow">Followers</span>
-              </div>
-            </div>
-            <div class="profile-nav">
-              <nav class="tabs">
-                <div class="nav-item2" onclick="showTab('posts-tab')"><span>Posts</span></div>
-                <div class="nav-item2" onclick="showTab('replies-tab')"><span>Replies</span></div>
-                <div class="nav-item2" onclick="showTab('highlights-tab')"><span>Highlights</span></div>
-                <div class="nav-item2" onclick="showTab('Articles-tab')"><span>Articles</span></div>
-                <div class="nav-item2" onclick="showTab('media-tab')"><span>Media</span></div>
-                <div class="nav-item2" onclick="showTab('likes-tab')"><span>Likes</span></div>
-              </nav>
             </div>
           </div>
 
-          <div id="posts-tab" class="tab-content active">
+          <div class="content">
             <div class="content-container">
               <div >
                 <img src="images/porfoilio.png" alt="profilePic" class="profile-pic">
@@ -255,7 +239,53 @@
                   </div>
                 </div>
                 <div class="post-text">
-                  <span>🚨 Breaking New </span>
+                  <span>🚨 Breaking News </span>
+                  <div>
+                    <span>Ruben Amorim has made Inter Milan’s Federico Dimarco his primary target for Manchester United in the January transfer window and is eager to bring him in.</span>
+                  </div>
+                  <span class="post-tag">@napolista</span>
+                </div>
+                <div class="photocont"><img src="images/porfoilio.png" alt="" class="postphoto"></div>
+                <div class="post-footer">
+                  <div class="icon-div">
+                    <img src="svg/comment.svg" alt="" class="post-icon2">
+                    <span class="post-text2">6.2k</span>
+                  </div>
+                  <div class="icon-div2 icon-div">
+                    <img src="svg/u-turn.svg" alt="" class="post-icon2">
+                    <span class="post-text2">1.9k</span>
+                  </div>
+                  <div class="icon-div3 icon-div">
+                    <img src="svg/heart.svg" alt="" class="post-icon2">
+                    <span class="post-text2">26k</span>
+                  </div>
+                  <div class="icon-div">
+                    <img src="svg/bar-chart.svg" alt="" class="post-icon3">
+                    <span class="post-text2">3.1m</span>
+                  </div>
+                  <div><img src="svg/bookmark.svg" alt="" class="post-icon4"><img src="svg/upload.svg" alt="" class="post-icon4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="content-container">
+              <div>
+                <img src="images/porfoilio.png" alt="profilePic" class="profile-pic">
+              </div>
+              <div class="content-post">
+                <div class="post-top">
+                  <div class="top-con">
+                    <span class="username">SimplyUtd</span><span class="username2">@SimplyUtd &middot;  <span class="time">9h</span></span>
+                  </div>
+                  <div class="post-topleft">
+                    <img src="svg/grok.svg" alt="" class="options">
+                    <img src="svg/3-dot.svg" alt="" class="options">
+                  </div>
+                </div>
+                <div class="post-text">
+                  <span>🚨 Breaking News </span>
                   <div>
                     <span>Ruben Amorim has made Inter Milan’s Federico Dimarco his primary target for Manchester United in the January transfer window and is eager to bring him in.</span>
                   </div>
@@ -286,78 +316,11 @@
                 </div>
               </div>
             </div>
-            <div class="wtf-post">
-              <div>
-                <h3 class="header-w">Who to follow</h3>
-              </div>
-              <div class="wtf-main">
-                
-                <div><img src="images/porfoilio.png" alt="" class="profile-pic2">
-                </div>
-                <div class="wtf-main2">
-                  <div>
-                    <div class="wtf-main3">
-                      <span class="username">United Zone</span> <img src="svg/verified.svg" alt="" class="options2">
-                    </div>
-                    <div>
-                      <span class="username2">@ManUnitedZone_</span>
-                    </div>
-                  </div>
-
-                  <div>
-                    <button class="follow-btn">Follow</button>
-                  </div>
-                </div>
-              </div>
-              <div class="wtf-main">
-                
-                <div><img src="images/porfoilio.png" alt="" class="profile-pic2">
-                </div>
-                <div class="wtf-main2">
-                  <div>
-                    <div class="wtf-main3">
-                      <span class="username">United Zone</span> <img src="svg/verified.svg" alt="" class="options2">
-                    </div>
-                    <div>
-                      <span class="username2">@ManUnitedZone_</span>
-                    </div>
-                  </div>
-
-                  <div>
-                    <button class="follow-btn">Follow</button>
-                  </div>
-                </div>
-              </div>
-              <div class="wtf-main">
-                
-                <div><img src="images/porfoilio.png" alt="" class="profile-pic2">
-                </div>
-                <div class="wtf-main2">
-                  <div>
-                    <div class="wtf-main3">
-                      <span class="username">United Zone</span> <img src="svg/verified.svg" alt="" class="options2">
-                    </div>
-                    <div>
-                      <span class="username2">@ManUnitedZone_</span>
-                    </div>
-                  </div>
-
-                  <div>
-                    <button class="follow-btn">Follow</button>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <span class="show" >Show more</span>
-              </div>
-
-            </div>
-
           </div>
 
-          <div id="replies-tab" class="tab-content">
+          <div class="content">
             <div class="content-container">
-              <div >
+              <div>
                 <img src="images/porfoilio.png" alt="profilePic" class="profile-pic">
               </div>
               <div class="content-post">
@@ -371,7 +334,7 @@
                   </div>
                 </div>
                 <div class="post-text">
-                  <span>🚨 Breaking New </span>
+                  <span>🚨 Breaking News </span>
                   <div>
                     <span>Ruben Amorim has made Inter Milan’s Federico Dimarco his primary target for Manchester United in the January transfer window and is eager to bring him in.</span>
                   </div>
@@ -404,83 +367,12 @@
             </div>
           </div>
           
-          <div id="highlights-tab" class="tab-content">
-            <div class="tab-cont">
-              <h1>Highlight on your profile</h1>
-              <span class="profile-joined">You must be subscribed to Premium to highlight posts on your profile.</span>
-              <button class="post-btn3">Subscribe to Premium</button>
-            </div>
-          </div>
-
-          <div id="Articles-tab" class="tab-content">
-            <div class="tab-cont">
-              <h1>Write Articles on X</h1>
-              <span class="profile-joined">You must be subscribed to Premium+ to write Articles on X</span>
-              <button class="post-btn3">Upgrade to Premium</button>
-            </div>
-          </div>
-
-          <div id="media-tab" class="tab-content">
-            <div class="tab-cont">
-              <h1>Lights, camera … attachments!</h1>
-              <span class="profile-joined">When you post photos or videos, they will show up here.</span>
-            </div>
-          </div>
-
-          <div id="likes-tab" class="tab-content">
-            <div class="content-container">
-              <div >
-                <img src="images/porfoilio.png" alt="profilePic" class="profile-pic">
-              </div>
-              <div class="content-post">
-                <div class="post-top">
-                  <div class="top-con">
-                    <span class="username">SimplyUtd</span><span class="username2">@SimplyUtd &middot;  <span class="time">9h</span></span>
-                  </div>
-                  <div class="post-topleft">
-                    <img src="svg/grok.svg" alt="" class="options">
-                    <img src="svg/3-dot.svg" alt="" class="options">
-                  </div>
-                </div>
-                <div class="post-text">
-                  <span>🚨 Breaking New </span>
-                  <div>
-                    <span>Ruben Amorim has made Inter Milan’s Federico Dimarco his primary target for Manchester United in the January transfer window and is eager to bring him in.</span>
-                  </div>
-                  <span class="post-tag">@napolista</span>
-                </div>
-                <div class="photocont"><img src="images/porfoilio.png" alt="" class="postphoto"></div>
-                <div class="post-footer">
-                  <div class="icon-div">
-                    <img src="svg/comment.svg" alt="" class="post-icon2">
-                    <span class="post-text2">6.2k</span>
-                  </div>
-                  <div class="icon-div2 icon-div">
-                    <img src="svg/u-turn.svg" alt="" class="post-icon2">
-                    <span class="post-text2">1.9k</span>
-                  </div>
-                  <div class="icon-div3 icon-div">
-                    <img src="svg/heart.svg" alt="" class="post-icon2">
-                    <span class="post-text2">26k</span>
-                  </div>
-                  <div class="icon-div">
-                    <img src="svg/bar-chart.svg" alt="" class="post-icon3">
-                    <span class="post-text2">3.1m</span>
-                  </div>
-                  <div>
-                    <img src="svg/bookmark.svg" alt="" class="post-icon4">
-                    <img src="svg/upload.svg" alt="" class="post-icon4">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <!--mobile navigation-->
           <div class="mobile-nav">
             <nav>
-              <div><a href="index.html"><img src="svg/home.svg" alt="" class="mobile-icons"></a></div>
+              <div><img src="svg/home.svg" alt="" class="mobile-icons"></div>
               <div><img src="svg/search.svg" alt="" class="mobile-icons"></div>
               <div><img src="svg/grok.svg" alt="" class="mobile-icons"></div>
               <div><img src="svg/bell.svg" alt="" class="mobile-icons"></div>
@@ -491,10 +383,53 @@
       </div>
       <div class="left-view">
         <div class="search-sec"><input type="search" placeholder="Search" class="search-input"></div>
-        
+        <div class="subscribe-sec">
+          <h3>Subscribe to premium</h3>
+          <span class="text-default">Subscribe to unlock new features and if eligible, receive a share of revenue</span>
+          <div><button class="sub-btn">Subscribe</button></div>
+        </div>
+        <div class="wh-sec">
+          <div class="header-w"><h3>What's happening?</h3></div>
+
+          <div class="wh1">
+            <div><img src="images/porfoilio.png" alt="" class="wh-img"></div>
+            <div class="wh1-details">
+              <div><h5>New York Fashion Week SS26</h5></div>
+              <div><span class="trend-details">LIVE</span></div>
+            </div>
+          </div>
+          <div class="trends-list">
+            <div class="trends">
+              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
+              <div><H4>Charlie Kirk</H4></div>
+              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
+              <div><span class="trend-details">3.04m posts</span></div>
+            </div>
+            <div class="trends">
+              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
+              <div><H4>Charlie Kirk</H4></div>
+              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
+              <div><span class="trend-details">3.04m posts</span></div>
+            </div>
+            <div class="trends">
+              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
+              <div><H4>Charlie Kirk</H4></div>
+              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
+              <div><span class="trend-details">3.04m posts</span></div>
+            </div>
+            <div class="trends">
+              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
+              <div><H4>Charlie Kirk</H4></div>
+              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
+              <div><span class="trend-details">3.04m posts</span></div>
+            </div>
+          </div>
+          <div><span class="show" >Show more</span></div>
+
+        </div>
         <div class="wtf-sec">
           <div>
-            <h3 class="header-w">You might like</h3>
+            <h3 class="header-w">Who to follow</h3>
           </div>
           <div class="wtf-main">
             
@@ -558,47 +493,6 @@
           </div>
 
         </div>
-
-        <div class="wh-sec">
-          <div class="header-w"><h3>What's happening?</h3></div>
-
-          <div class="wh1">
-            <div><img src="images/porfoilio.png" alt="" class="wh-img"></div>
-            <div class="wh1-details">
-              <div><h5>New York Fashion Week SS26</h5></div>
-              <div><span class="trend-details">LIVE</span></div>
-            </div>
-          </div>
-          <div class="trends-list">
-            <div class="trends">
-              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
-              <div><H4>Charlie Kirk</H4></div>
-              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
-              <div><span class="trend-details">3.04m posts</span></div>
-            </div>
-            <div class="trends">
-              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
-              <div><H4>Charlie Kirk</H4></div>
-              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
-              <div><span class="trend-details">3.04m posts</span></div>
-            </div>
-            <div class="trends">
-              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
-              <div><H4>Charlie Kirk</H4></div>
-              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
-              <div><span class="trend-details">3.04m posts</span></div>
-            </div>
-            <div class="trends">
-              <div class="trend-top"><span class="trend-details">Poltics &middot; Trending</span> <img src="svg/3-dot.svg" alt="" class="options"></div>
-              <div><H4>Charlie Kirk</H4></div>
-              <div><Span class="trend-details">Trending with <span class="trend-text">Epstein</span>, <span class="trend-text">Trump</span></Span></div>
-              <div><span class="trend-details">3.04m posts</span></div>
-            </div>
-          </div>
-          <div><span class="show" >Show more</span></div>
-
-        </div>
-
         <div class="left-bottom">
           <div class="left-bottom-items"><span class="username2">Terms of Service</span></div>
           <div class="left-bottom-items"><span class="username2">Privacy Policy</span></div>
@@ -615,7 +509,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -642,16 +535,6 @@
       </div>
     </nav>
   </div>
-  <script>
-    function showTab(tabId) {
-      // hide all tabs
-      document.querySelectorAll('.tab-content').forEach(tab => {
-        tab.classList.remove('active');
-      });
-      // show only the one clicked
-      document.getElementById(tabId).classList.add('active');
-    }
-  </script>
 </body>
 </html>
 
