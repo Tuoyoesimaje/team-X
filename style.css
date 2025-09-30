@@ -988,6 +988,7 @@ nav{
   }
 }
 
+
 @media (max-height: 499px){
   .mobile-nav2{
     display: flex;
@@ -998,8 +999,13 @@ nav{
     padding: 4px 0;
     width: 100%;
   }
-
   .sidebar{
+    display: none;
+  }
+}
+
+@media (max-width: 499px){
+  .mobile-nav2{
     display: none;
   }
 }
