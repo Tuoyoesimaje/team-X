@@ -981,8 +981,9 @@ nav{
   }
 
   .postphoto{
-    width: 380px;
+    width: 370px;
     height: 400px;
+    margin-right: 10px;
     object-fit: cover;
     border-radius: 10px;
     max-width: 100%;
