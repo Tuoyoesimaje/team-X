@@ -173,6 +173,34 @@ body{
   border-bottom: none;
 }
 
+.header-profile{
+  display: none;
+  width: auto;
+}
+
+.nav-icon3{
+  width: 26px;
+  filter: brightness(0) saturate(100%) invert(50%) sepia(0%) hue-rotate(0deg);
+}
+
+.profile-pic3{
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 23px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.header-nav1{
+  flex: 1;
+}
+
+.header-nav2{
+  margin-left: -25px;
+  flex:1;
+}
+
 .header{
   width: auto;
   border-bottom: rgb(196, 196, 196, 0.2) 1px solid;
@@ -991,6 +1019,10 @@ nav{
   }
   .nav-item2{
     font-size: 13px;
+  }
+  .header-profile{
+    display: flex;
+    padding-left: 10px;
   }
 }
 
