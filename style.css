@@ -347,7 +347,7 @@ nav{
 .profile-pic{
   width: 46px;
   height: 46px;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 23px;
   margin-top: 10px;
   cursor: pointer;
