@@ -987,6 +987,9 @@ nav{
     border-radius: 10px;
     max-width: 100%;
   }
+  .nav-item2{
+    font-size: 13px;
+  }
 }
 
 @media (min-width: 500px){
