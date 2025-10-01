@@ -53,6 +53,13 @@ body{
 .nav-item2{
   cursor: pointer;
   font-size: 15px;
+  flex: 1;
+  padding: 15px;
+  color: #727578
+}
+
+.nav-item2:hover{
+  background: rgba(77, 76, 76, 0.3);
 }
 
 
@@ -332,7 +339,8 @@ body{
 .profile-nav{
   margin-top: 10px;
   display: flex;
-  padding: 10px 0;
+  padding: 0;
+  justify-content: space-evenly;
 }
 
 nav{
