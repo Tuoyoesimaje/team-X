@@ -1166,6 +1166,9 @@ nav{
     padding: 10px 5px;
     min-width: 50px;
   }
+  .nav-item2 span.active::after{
+    bottom: -10px;
+  }
 
   nav{
     overflow-x: auto;
