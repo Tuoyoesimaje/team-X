@@ -229,12 +229,12 @@
             </div>
             <div class="profile-nav">
               <nav class="tabs">
-                <div class="nav-item2" onclick="showTab('posts-tab')"><span>Posts</span></div>
-                <div class="nav-item2" onclick="showTab('replies-tab')"><span>Replies</span></div>
-                <div class="nav-item2" onclick="showTab('highlights-tab')"><span>Highlights</span></div>
-                <div class="nav-item2" onclick="showTab('Articles-tab')"><span>Articles</span></div>
-                <div class="nav-item2" onclick="showTab('media-tab')"><span>Media</span></div>
-                <div class="nav-item2" onclick="showTab('likes-tab')"><span>Likes</span></div>
+                <div class="nav-item2 active" onclick="showTab('posts-tab', this)"><span>Posts</span></div>
+                <div class="nav-item2" onclick="showTab('replies-tab', this)"><span>Replies</span></div>
+                <div class="nav-item2" onclick="showTab('highlights-tab', this)"><span>Highlights</span></div>
+                <div class="nav-item2" onclick="showTab('Articles-tab', this)"><span>Articles</span></div>
+                <div class="nav-item2" onclick="showTab('media-tab', this)"><span>Media</span></div>
+                <div class="nav-item2" onclick="showTab('likes-tab', this)"><span>Likes</span></div>
               </nav>
             </div>
           </div>
@@ -739,13 +739,19 @@
     </nav>
   </div>
   <script>
-    function showTab(tabId) {
+    function showTab(tabId, element) {
       // hide all tabs
       document.querySelectorAll('.tab-content').forEach(tab => {
         tab.classList.remove('active');
       });
+      // remove active from nav items
+      document.querySelectorAll('.nav-item2').forEach(item => {
+        item.classList.remove('active');
+      });
       // show only the one clicked
       document.getElementById(tabId).classList.add('active');
+      // add active to clicked nav item
+      element.classList.add('active');
     }
   </script>
 </body>
