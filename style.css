@@ -711,6 +711,11 @@ nav{
   filter: brightness(0) saturate(100%) invert(50%) sepia(0%) hue-rotate(0deg);
 }
 
+.post-icon5:hover{
+  background: rgba(2, 118, 190, 0.15);
+  border-radius: 22px;
+}
+
 .post-icon4:hover {
   background: rgba(2, 118, 190, 0.2);
   border-radius: 22px;
@@ -1171,7 +1176,7 @@ nav{
     padding-left: 10px;
   }
 
-  .icon-div{
+  .icon-div, .icon-div4{
     padding: 4px; /* Reduced from 8px to prevent bigness on mobile */
   }
   
