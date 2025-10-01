@@ -194,3 +194,228 @@ a{
   justify-self: center;
   }
 }
+
+/* Modal Styles */
+.modal-backdrop {
+ display: none;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(0, 0, 0, 0.5);
+ justify-content: center;
+ align-items: center;
+ z-index: 1000;
+}
+
+.modal-content {
+ background-color: #000000;
+ border-radius: 12px;
+ padding: 20px;
+ width: 90%;
+ max-width: 400px;
+ max-height: 90vh;
+ overflow-y: auto;
+ position: relative;
+ color: #D9D9D9;
+ font-family: 'Roboto', sans-serif;
+}
+
+.modal-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding-bottom: 10px;
+}
+
+.modal-x-logo {
+ width: 30px;
+ height: 30px;
+}
+
+.close-btn {
+ font-size: 24px;
+ color: #D9D9D9;
+ cursor: pointer;
+ position: absolute;
+ left: 0;
+ top: 10px;
+}
+
+.modal-login-title {
+ font-size: 1.8rem;
+ font-weight: 700;
+ margin-bottom: 25px;
+ margin-top: 20px;
+ text-align: center;
+}
+
+.modal-step-container {
+ width: 100%;
+}
+
+.modal-step-container button {
+ width: 100%;
+ padding: 10px 15px;
+ margin-bottom: 15px;
+ border-radius: 9999px;
+ font-weight: 700;
+ font-size: 15px;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ transition: background-color 0.2s, opacity 0.2s;
+ border: 1px solid #2F3336;
+}
+
+.google-signin-btn {
+ background-color: #D9D9D9;
+ color: #000000;
+}
+
+.google-signin-btn svg {
+ margin-right: 8px;
+}
+
+.google-signin-btn:hover {
+ opacity: 0.9;
+}
+
+.apple-signin-btn {
+ background-color: #D9D9D9;
+ color: #000000;
+}
+
+.apple-signin-btn:hover {
+ opacity: 0.9;
+}
+
+.or-separator {
+ display: flex;
+ align-items: center;
+ text-align: center;
+ color: #71767B;
+ margin: 15px 0;
+}
+
+.or-separator hr {
+ flex-grow: 1;
+ height: 1px;
+ border: none;
+ background-color: #2F3336;
+}
+
+.or-separator span {
+ padding: 0 10px;
+}
+
+.x-input {
+ width: 100%;
+ padding: 20px 10px 5px;
+ margin-bottom: 30px;
+ border: 1px solid #71767B;
+ border-radius: 4px;
+ background-color: #000000;
+ color: #D9D9D9;
+ font-size: 17px;
+ transition: border-color 0.2s;
+}
+
+.x-input:focus {
+ border-color: #1D9BF0;
+ outline: none;
+ background-color: #000000;
+}
+
+.primary-btn {
+ background-color: #D9D9D9;
+ color: #000000;
+ border: none;
+}
+
+.primary-btn:hover {
+ background-color: #E7E7E7;
+}
+
+.forgot-link, .signup-text {
+ color: #1D9BF0;
+ text-decoration: none;
+ font-size: 15px;
+ font-weight: 400;
+}
+
+.forgot-link {
+ display: block;
+ margin-top: 20px;
+ text-align: center;
+}
+
+.signup-text {
+ margin-top: 50px;
+ font-size: 15px;
+ color: #71767B;
+}
+
+.signup-text a {
+ color: #1D9BF0;
+ text-decoration: none;
+}
+
+.step-content {
+ display: none;
+}
+
+.step-content.active {
+ display: block;
+}
+
+.input-wrapper {
+ position: relative;
+}
+
+.input-wrapper label {
+ position: absolute;
+ top: 50%;
+ left: 10px;
+ transform: translateY(-50%);
+ color: #71767B;
+ transition: 0.2s ease-out;
+ pointer-events: none;
+}
+
+.x-input:focus + label,
+.x-input:not(:placeholder-shown) + label {
+ top: 10px;
+ font-size: 13px;
+ color: #1D9BF0;
+}
+
+.x-input:not(:focus):not(:placeholder-shown) + label {
+ color: #71767B;
+}
+
+/* Mobile Styles for Modal */
+@media (max-width: 499px) {
+ .modal-backdrop {
+   align-items: flex-end; /* Slide up from bottom */
+ }
+
+ .modal-content {
+   width: 100%;
+   max-width: none;
+   border-radius: 12px 12px 0 0; /* Rounded top corners */
+   margin: 0;
+   animation: slideUp 0.3s ease-out;
+ }
+
+ @keyframes slideUp {
+   from {
+     transform: translateY(100%);
+   }
+   to {
+     transform: translateY(0);
+   }
+ }
+}

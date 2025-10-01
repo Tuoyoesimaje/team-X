@@ -47,7 +47,7 @@
 
         <h4>Already have an account?</h4>
         <div class="login-container">
-          <a href="loginform.html"><button class="signin-btn">Sign in</button></a>
+          <button class="signin-btn" onclick="showModal()">Sign in</button>
           <button class="getapp-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
             <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
@@ -81,5 +81,145 @@
             <a href="#" class="left-bottom-items3">© 2025 X Corp.</a>
          </div>
     </footer>
+
+    <!-- Login Modal Overlay -->
+    <div id="login-modal" class="modal-backdrop">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close-btn" onclick="closeModal()">&times;</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/X_logo.jpg/1024px-X_logo.jpg" alt="X-logo" class="modal-x-logo">
+          <div></div>
+        </div>
+        <h1 class="modal-login-title">Sign in to X</h1>
+        <div id="modal-step-1" class="modal-step-container step-content active">
+          <form onsubmit="event.preventDefault(); proceedToStep2()">
+            <button class="google-signin-btn">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_26_11)">
+                <path d="M17.64 9.2045C17.64 8.5679 17.5857 7.9622 17.4776 7.3879H9V10.648H13.8219C13.6391 11.6967 13.0441 12.5833 12.1648 13.1783V15.3409H14.9922C16.6346 13.8409 17.64 11.6669 17.64 9.2045Z" fill="#4285F4"/>
+                <path d="M9 18C11.43 18 13.4355 17.1895 14.9922 15.3409L12.1648 13.1783C11.3789 13.7169 10.285 14.0341 9 14.0341C6.5418 14.0341 4.4754 12.3559 3.7381 10.0886H0.801758V12.3409C2.37896 15.4409 5.5181 18 9 18Z" fill="#34A853"/>
+                <path d="M3.7381 10.0886C3.56846 9.5597 3.47728 9.0069 3.47728 8.4375C3.47728 7.8681 3.56846 7.3153 3.7381 6.7864V4.5341H0.801758C0.291758 5.5786 0 6.9531 0 8.4375C0 9.9219 0.291758 11.2964 0.801758 12.3409L3.7381 10.0886Z" fill="#FBBC05"/>
+                <path d="M9 2.8409C10.3802 2.8409 11.6063 3.3235 12.5414 4.175L15.068 1.6486C13.4348 0.6033 11.3789 0 9 0C5.5181 0 2.37896 2.5591 0.801758 5.6591L3.7381 7.9114C4.4754 5.6441 6.5418 3.9659 9 3.9659V2.8409Z" fill="#EA4335"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_26_11">
+                <rect width="18" height="18" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+              Sign in with Google
+            </button>
+            <button class="apple-signin-btn">
+              Sign in with Apple
+            </button>
+            <div class="or-separator">
+              <hr>
+              <span>or</span>
+              <hr>
+            </div>
+            <div class="input-wrapper">
+              <input type="text" id="modal-username-or-email" class="x-input" placeholder=" " required>
+              <label for="modal-username-or-email">Phone, email address, or username</label>
+            </div>
+            <button type="submit" class="primary-btn" id="modal-next-btn">
+              Next
+            </button>
+          </form>
+          <a href="#" class="forgot-link">Forgot password?</a>
+          <p class="signup-text">
+            Don't have an account? <a href="#">Sign up</a>
+          </p>
+        </div>
+        <div id="modal-step-2" class="modal-step-container step-content">
+          <form onsubmit="event.preventDefault(); login()">
+            <div class="input-wrapper">
+              <input type="text" id="modal-display-email" class="x-input" value="" readonly style="cursor: default;">
+              <label for="modal-display-email">Phone, email address, or username</label>
+            </div>
+            <div class="input-wrapper">
+              <input type="password" id="modal-password" class="x-input" placeholder=" " required>
+              <label for="modal-password">Password</label>
+            </div>
+            <button type="submit" class="primary-btn" id="modal-login-submit-btn">
+              Log In
+            </button>
+          </form>
+          <a href="#" class="forgot-link">Forgot password?</a>
+          <p class="signup-text">
+            Don't have an account? <a href="#">Sign up</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Modal functionality
+      const modal = document.getElementById('login-modal');
+      const step1 = document.getElementById('modal-step-1');
+      const step2 = document.getElementById('modal-step-2');
+      const emailInput = document.getElementById('modal-username-or-email');
+      const displayEmailInput = document.getElementById('modal-display-email');
+      const passwordInput = document.getElementById('modal-password');
+
+      const VALID_CREDENTIALS = {
+        email: "esimajetuoyo71@gmail.com",
+        username: "tuoyo",
+        password: "123"
+      };
+
+      let currentStep = 1;
+
+      function showModal() {
+        modal.style.display = 'flex';
+      }
+
+      function closeModal() {
+        modal.style.display = 'none';
+        // Reset to step 1
+        step1.classList.add('active');
+        step2.classList.remove('active');
+        currentStep = 1;
+        emailInput.value = '';
+        passwordInput.value = '';
+      }
+
+      function proceedToStep2() {
+        const emailValue = emailInput.value.trim();
+        if (emailValue) {
+          displayEmailInput.value = emailValue;
+          step1.classList.remove('active');
+          step2.classList.add('active');
+          currentStep = 2;
+          passwordInput.focus();
+        }
+      }
+
+      function goBackToStep(targetStep) {
+        if (targetStep === 1 && currentStep === 2) {
+          step2.classList.remove('active');
+          step1.classList.add('active');
+          currentStep = 1;
+          emailInput.focus();
+        }
+      }
+
+      function login() {
+        const enteredEmail = displayEmailInput.value;
+        const enteredPassword = passwordInput.value;
+        if ((enteredEmail === VALID_CREDENTIALS.email || enteredEmail === VALID_CREDENTIALS.username) && enteredPassword === VALID_CREDENTIALS.password) {
+          window.location.href = "home.html";
+        } else {
+          passwordInput.value = '';
+          passwordInput.focus();
+        }
+      }
+
+      // Close modal when clicking outside
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          closeModal();
+        }
+      }
+    </script>
 </body>
 </html>
