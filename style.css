@@ -1170,6 +1170,10 @@ nav{
     display: flex;
     padding-left: 10px;
   }
+
+  .icon-div{
+    padding: 4px; /* Reduced from 8px to prevent bigness on mobile */
+  }
   
 }
 
