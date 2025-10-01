@@ -173,7 +173,7 @@
             <div class="header-nav2"><a href="home.html"><img src="svg/logo.svg" alt="" class="nav-icon3" style="padding-top: 10px;"></a></div>
           </div>
           <nav class="tabs">
-             <div class="nav-item2 head-div1 active" onclick="showTab('for-you', this)"><span>For you</span></div>
+             <div class="nav-item2 head-div1" onclick="showTab('for-you', this)"><span class="active">For you</span></div>
              <div class="nav-item2 head-div2" onclick="showTab('following', this)"><span>Following</span></div>
            </nav>
         </div>
@@ -639,11 +639,11 @@
      document.querySelectorAll('.tab-content').forEach(tab => {
        tab.classList.remove('active');
      });
-     document.querySelectorAll('.nav-item2').forEach(item => {
-       item.classList.remove('active');
+     document.querySelectorAll('.nav-item2 span').forEach(span => {
+       span.classList.remove('active');
      });
      document.getElementById(tabId).classList.add('active');
-     element.classList.add('active');
+     element.querySelector('span').classList.add('active');
    }
   </script>
 </body>

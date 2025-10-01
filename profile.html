@@ -229,7 +229,7 @@
             </div>
             <div class="profile-nav">
               <nav class="tabs">
-                <div class="nav-item2 active" onclick="showTab('posts-tab', this)"><span>Posts</span></div>
+                <div class="nav-item2" onclick="showTab('posts-tab', this)"><span class="active">Posts</span></div>
                 <div class="nav-item2" onclick="showTab('replies-tab', this)"><span>Replies</span></div>
                 <div class="nav-item2" onclick="showTab('highlights-tab', this)"><span>Highlights</span></div>
                 <div class="nav-item2" onclick="showTab('Articles-tab', this)"><span>Articles</span></div>
@@ -744,14 +744,14 @@
       document.querySelectorAll('.tab-content').forEach(tab => {
         tab.classList.remove('active');
       });
-      // remove active from nav items
-      document.querySelectorAll('.nav-item2').forEach(item => {
-        item.classList.remove('active');
+      // remove active from nav spans
+      document.querySelectorAll('.nav-item2 span').forEach(span => {
+        span.classList.remove('active');
       });
       // show only the one clicked
       document.getElementById(tabId).classList.add('active');
-      // add active to clicked nav item
-      element.classList.add('active');
+      // add active to clicked nav span
+      element.querySelector('span').classList.add('active');
     }
   </script>
 </body>
