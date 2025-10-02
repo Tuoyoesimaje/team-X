@@ -1533,6 +1533,18 @@ nav{
   }
 }
 
+@media (max-height: 818px){
+  .nav-response{
+    display: none;
+  }
+}
+
+@media (max-height: 768px){
+  .nav-response2{
+    display: none;
+  }
+}
+
 @media (max-height: 718px){
   .a-nav3{
     display: none;
@@ -1548,4 +1560,5 @@ nav{
     display: none;
   }
 }
+
 
