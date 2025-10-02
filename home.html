@@ -169,7 +169,7 @@
         
         <div class="header">
           <div class="header-profile">
-            <div class="header-nav1"><a href="profile.html"><img src="images/mydp.jpg" alt="" class="profile-pic3"></a></div>
+            <div class="header-nav1"><img src="images/mydp.jpg" alt="" class="profile-pic3" onclick="toggleSidebar()"></div>
             <div class="header-nav2"><a href="home.html"><img src="svg/logo.svg" alt="" class="nav-icon3" style="padding-top: 10px;"></a></div>
           </div>
           <nav class="tabs">
@@ -615,6 +615,134 @@
         </div>
       </div>
     </div>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="mobile-sidebar-overlay" id="mobileSidebarOverlay" onclick="closeSidebar()">
+      <div class="mobile-sidebar" onclick="event.stopPropagation()">
+        <div class="sidebar">
+          <div class="sidebar-main">
+            <div class="logo-nav1">
+              <a href="home.html" class="logo-nav2">
+                <img src="svg/logo.svg" alt="" class="nav-icon">
+              </a>
+            </div>
+            <div class="a-nav">
+              <a href="home.html" class="a-nav">
+                <div class="nav-item">
+                  <img src="svg/home.svg" alt="" class="nav-icon">
+                  <span class="nav-text">Home</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="a-nav">
+              <a href="home.html" class="a-nav">
+                <div class="nav-item">
+                  <img src="svg/search.svg" alt="" class="nav-icon">
+                  <span class="nav-text">Explore</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="a-nav">
+              <a href="home.html" class="a-nav">
+                <div class="nav-item">
+                  <img src="svg/bell.svg" alt="" class="nav-icon">
+                  <span class="nav-text">Notifications</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="a-nav">
+              <a href="home.html" class="a-nav">
+                <div class="nav-item">
+                  <img src="svg/email.svg" alt="" class="nav-icon">
+                  <span class="nav-text">Messages</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="a-nav">
+              <a href="home.html" class="a-nav">
+                <div class="nav-item">
+                  <img src="svg/grok.svg" alt="" class="nav-icon">
+                  <span class="nav-text">Grok</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="a-nav1">
+              <a href="home.html" class="a-nav">
+                <div class="nav-item">
+                  <img src="svg/community.svg" alt="" class="nav-icon">
+                  <span class="nav-text">Communities</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="a-nav2">
+              <a href="home.html" class="a-nav">
+                <div class="nav-item">
+                  <img src="svg/logo.svg" alt="" class="nav-icon">
+                  <span class="nav-text">Premium</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="a-nav3">
+              <a href="home.html" class="a-nav">
+                <div class="nav-item">
+                  <img src="svg/thunder.svg" alt="" class="nav-icon">
+                  <span class="nav-text">Verified Orgs</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="a-nav">
+              <a href="profile.html" class="a-nav">
+                <div class="nav-item">
+                  <img src="svg/person.svg" alt="" class="nav-icon">
+                  <span class="nav-text">Profile</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="a-nav">
+              <a href="home.html" class="a-nav">
+                <div class="nav-item">
+                  <img src="svg/3-dot-in-circle.svg" alt="" class="nav-icon">
+                  <span class="nav-text">More</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="btn-cont2">
+              <button class="post-btn2">Post</button>
+            </div>
+
+            <div class="btn-cont3">
+              <div class="btn-cont3b">
+                <img src="svg/feather.svg" alt="" class="nav-icon2">
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-pro">
+            <div class="sidebar-pro2">
+              <div class="sidebar-pro4">
+                <img src="images/mydp.jpg" alt="" class="profile-pic3">
+              </div>
+              <div class="sidebar-pro3">
+                <span>Tuoyo Esimaje</span>
+                <span class="profile-joined">tuoyo</span>
+              </div>
+            </div>
+            <div>
+              <img src="svg/3-dot.svg" alt="" class="side-icon">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <!--mobile landscape nav-->
   <div class="mobile-nav2">
@@ -649,6 +777,16 @@
      });
      document.getElementById(tabId).classList.add('active');
      element.querySelector('span').classList.add('active');
+   }
+
+   function toggleSidebar() {
+     const overlay = document.getElementById('mobileSidebarOverlay');
+     overlay.classList.toggle('active');
+   }
+
+   function closeSidebar() {
+     const overlay = document.getElementById('mobileSidebarOverlay');
+     overlay.classList.remove('active');
    }
   </script>
 </body>
